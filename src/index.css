@@ -1,0 +1,32 @@
+
+
+.setting-drwer{
+    display: none !important;
+}
+
+.ant-card-head{
+    display: none !important;
+}
+
+.ant-layout-header{
+    padding: 0px !important;
+    padding-bottom: 10px !important;
+}
+
+.tabled{
+    padding-top: 20px !important;
+}
+
+.ant-table-cell{
+    font-size: 14px !important;
+}
+
+ .ant-table-pagination-right{
+    padding-right: 20px !important;
+}
+
+.newtable11{
+    display: flex;
+    gap: 10%;
+}
+

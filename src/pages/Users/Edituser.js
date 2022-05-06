@@ -1,0 +1,262 @@
+import React,  {useEffect, useState} from 'react'
+import styled from 'styled-components'
+import {useDispatch, useSelector} from 'react-redux'
+import {useParams} from 'react-router-dom'
+
+import { Form, Input, Divider, Button, Col, Row, Select, Drawer,  DatePicker, Upload, InputNumber, Switch  } from 'antd';
+import {updateUser, fetchOneUser, userSelector} from '../../api/user'
+import { UploadOutlined } from '@ant-design/icons';
+import {authenticateSelector} from '../../api/authSlice'
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import { fetchAllcompanyLicense, fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
+import moment from 'moment';
+import {FaUserAlt, FaLock} from 'react-icons/fa'
+
+const { Option } = Select;
+const layout = {
+  labelCol: { span: 8},
+  wrapperCol: { span: 16 },
+};
+ 
+  
+  
+export default function EditUser({current_user,}) {
+    
+    const [loading, setLoading] = useState(false)
+
+    const { user } = useSelector(authenticateSelector) 
+    const dispatch = useDispatch();
+    const [validityYear, setYear]=useState(null)
+    const [validityMonth, setMonth]=useState(null)
+    
+    // const {current_user} = useSelector(userSelector)
+    console.log(current_user);
+    // console.log(current_user.license.license_number);
+ 
+    
+    
+    const {id} = useParams()
+
+     
+
+    useEffect(()=>{
+  
+      form.setFieldsValue({
+        user_name:current_user &&  current_user.user_name,
+        email:current_user && current_user.email,
+        department:current_user&& current_user. department,
+        license_number:current_user && current_user?.license?.license_number,
+        phone_number:current_user && current_user.phone_number,
+        full_name:current_user && current_user.full_name,
+        company:user?._id,
+        
+    
+        });
+
+        
+
+  }, [current_user])
+
+    const onFinish = (values) => {
+  
+        const userdata = {
+
+
+            license_number:values.license_number,
+            phone_number:values.phone_number,
+            email:values.email,
+             department:values.department,
+             user_name:values.user_name,
+             full_name:values.full_name,
+             company:user?._id,
+             password:values.password
+             
+          }
+        
+      
+   dispatch(updateUser(current_user._id, userdata,user?._id))
+   form.resetFields()
+  
+  };
+
+  const [form] = Form.useForm();
+
+  
+  const onChange = (value)=> {
+    console.log(`selected ${value}`)
+
+  }
+
+  const onChangeYear = (value)=> {
+    console.log(`selected ${value}`)
+setYear(value)
+  }
+
+  const onChangeMonth = (value)=> {
+    console.log(`selected ${value}`)
+    setMonth(value)
+  }
+console.log(validityMonth);
+console.log(validityYear);
+  
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
+
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+
+
+    return (
+      <>
+ 
+ <Form layout="vertical" hideRequiredMark
+           form={form}
+           name="basic"
+           initialValues={{ remember: false }}
+           onFinish={onFinish}
+           onFinishFailed={onFinishFailed}
+           autoComplete={false}
+          >
+            <Row gutter={16}>
+              <Col span={12}>
+                <Form.Item
+                autoComplete="flase"
+                  name="license_number"
+                  label="License Number"
+                  rules={[{ required: true, message: 'Please enter License Number' }]}
+                >
+ <Input disabled={true} />
+ 
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item
+                  name="full_name"
+                  label="Full name"
+                  rules={[{ required: true, message: 'Please enter Full name' }]}
+                >
+                  <Input />
+                </Form.Item>
+              </Col>
+            </Row>
+
+            <Row gutter={16}>
+              <Col span={12}>
+                <Form.Item
+                  name="Department"
+                  label="Department"
+                  rules={[{ required: true, message: 'Please select a Department' }]}
+                >
+                 
+                </Form.Item>
+              </Col>
+            </Row>
+
+            <Divider />
+
+            <Row gutter={16}>
+              <Col span={20}>
+                <Form.Item
+                  type="phone_number"
+                  name="phone_number"
+                  label="Phone Number"
+                  rules={[{ required: true, message: 'Please enter Phone Number' }]}
+                >
+                  <Input  />
+                </Form.Item>
+              </Col>
+              
+            </Row>
+
+            <Row gutter={16}>
+              <Col span={20}>
+                <Form.Item
+                  type="email"
+                  name="email"
+                  label="Email"
+                  rules={[{ required: true, message: 'Please enter Email' }]}
+                >
+                  <Input  />
+                </Form.Item>
+              </Col>
+              
+            </Row>
+
+            <Row gutter={16}>
+              <Col span={20}>
+                <Form.Item
+                  type="user_name"
+                  name="user_name"
+                  label="User name"
+                  rules={[{ required: true, message: 'Please enter User name' }]}
+                >
+                  <Input  />
+                </Form.Item>
+              </Col>
+              
+            </Row>
+
+<Row gutter={16}>
+<Col span={10}>
+<Form.Item
+            label={<p >Upadte Password</p>}
+            name="password"
+            rules={[
+              {
+                  min: 8,
+                  required: true,
+                  message: 'Password must be atleast 8 Characters!',
+                  showSearch:'false',
+                  autocomplete: "off",
+              },
+              ]}
+              hasFeedback >
+            <Input.Password  />
+          </Form.Item>
+              </Col>
+              <Col  span={10}>
+          <Form.Item
+            label={<p >Confirm Password</p>}
+            name="confirm"
+            dependencies={['password']}
+            hasFeedback
+            
+            rules={[
+                {required: true, message: 'Password must be atleast 8 Characters!'},
+              ({ getFieldValue }) => ({
+                validator(rule, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+    
+                  return Promise.reject('The two Password that you Entered Do Not Match!');
+                },
+              }),
+            ]}
+          >
+            <Input.Password  />
+          </Form.Item>
+              </Col>
+</Row>
+
+        
+<Button type="primary" htmlType="submit"
+onClick={() => setVisible(false)}
+block style={{ fontSize: '14px' }}>
+      Update
+    </Button>
+          </Form>
+        
+      </>
+    );
+  }
+

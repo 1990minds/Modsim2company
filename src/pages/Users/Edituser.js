@@ -156,6 +156,7 @@ console.log(validityYear);
                   label="Department"
                   rules={[{ required: true, message: 'Please select a Department' }]}
                 >
+                  <Input  />
                  
                 </Form.Item>
               </Col>
@@ -208,12 +209,12 @@ console.log(validityYear);
 <Row gutter={16}>
 <Col span={10}>
 <Form.Item
-            label={<p >Upadte Password</p>}
+            label={<p >Update Password</p>}
             name="password"
             rules={[
               {
                   min: 8,
-                  required: true,
+                  required: false,
                   message: 'Password must be atleast 8 Characters!',
                   showSearch:'false',
                   autocomplete: "off",
@@ -223,7 +224,7 @@ console.log(validityYear);
             <Input.Password  />
           </Form.Item>
               </Col>
-              <Col  span={10}>
+              {/* <Col  span={10}>
           <Form.Item
             label={<p >Confirm Password</p>}
             name="confirm"
@@ -245,7 +246,7 @@ console.log(validityYear);
           >
             <Input.Password  />
           </Form.Item>
-              </Col>
+              </Col> */}
 </Row>
 
         

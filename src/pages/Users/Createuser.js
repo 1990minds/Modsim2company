@@ -149,6 +149,7 @@ const onClose = () => {
                   label="Department"
                   rules={[{ required: true, message: 'Please select a Department' }]}
                 >
+                  <Input  />
                  
                 </Form.Item>
               </Col>

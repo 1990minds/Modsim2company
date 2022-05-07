@@ -418,12 +418,12 @@ function Header({
               </div>
             </div>
           </Drawer> */}
-          <Card>
+          
           <Link to="/sign-in" className="btn-sign-in" onClick={()=>{  dispatch(logOut()) }} type="link" danger>
             {/* {profile} */}
             <span>Sign Out</span>
           </Link>
-          </Card>
+          
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Badge size="small" count={4}>
             <Dropdown overlay={menu} trigger={["click"]}>

@@ -2,7 +2,7 @@
 import { Menu, Button } from "antd";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-
+import './index.css'
 import Logo from '../../assets/MODSIM.png'
 import { FaUserAlt } from 'react-icons/fa';
 
@@ -248,7 +248,7 @@ C14.74,4.76,15.69,3.81,16.88,3.81z"
 
 
         <Menu.Item key="4">
-          <NavLink to="/auth/products">
+          <NavLink to="/auth/broadcast">
             <span
               className="icon"
               style={{

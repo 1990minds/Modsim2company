@@ -10,8 +10,9 @@ import {SearchOutlined,SyncOutlined} from '@ant-design/icons'
 import { useDebounce } from "use-debounce";
 import { keyUri, config } from '../../key'
 import styled from 'styled-components'
-import { Tabs, Button, Input,Upload } from 'antd';
+import { Tabs, Button,Row,Col, Input,Upload } from 'antd';
 import {authenticateSelector} from '../../api/authSlice'
+import { PlusOutlined } from '@ant-design/icons';
 
 
 const { Search } = Input;
@@ -79,9 +80,12 @@ useEffect(()=>{
 
   return (
     <Layout>
-       <ExcelBtn data={all_user} />
-
-       <SearchWrap className="mx-4 " style={{borderRadius:"4px"}}>
+       <Row>
+      <Col span={8}>
+      < Createuser icon={<PlusOutlined />} />
+      </Col>
+      <Col span={3} offset={10} >
+      <SearchWrap className="mx-4 " style={{borderRadius:"4px"}}>
 
 <Input value={search}  className="px-4 py-2 focus:outline-none"
 prefix ={  <SearchOutlined  style={{color:'#3e79f7', fontWeight:'bold'}} />
@@ -89,11 +93,26 @@ prefix ={  <SearchOutlined  style={{color:'#3e79f7', fontWeight:'bold'}} />
 placeholder="Search" onChange={onSearch}  />
 </SearchWrap>
 
-        <Createuser/>
+        </Col>
+        <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
+        <ExcelBtn data={all_user} />
+      </Col>
+      </Row>
+
         <UserTables data={(filter?.length > 0) ? filter :all_user} />
         
     </Layout>
   )
 }
 const SearchWrap = styled.div`
+  
+
+.ant-input-affix-wrapper{
+  padding: 0px !important;
+padding-left: 12px !important;
+padding-right: 8px !important;
+border-radius: 10px !important;
+border-color: transparent !important;
+box-shadow: 6px 6px 5px #F1F1F1;  
+}
 `

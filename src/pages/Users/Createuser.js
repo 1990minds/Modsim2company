@@ -145,12 +145,11 @@ const onClose = () => {
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="Department"
+                  name="department"
                   label="Department"
                   rules={[{ required: true, message: 'Please select a Department' }]}
                 >
-                  <Input  />
-                 
+                 <Input />
                 </Form.Item>
               </Col>
             </Row>

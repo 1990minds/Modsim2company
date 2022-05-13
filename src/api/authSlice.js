@@ -39,7 +39,7 @@ export const authenticateSlice = createSlice({
 
         state.loading = false;
          state.isAuthenticate = true 
-         state.company = payload.user
+         state.user = payload.user
          state.token = payload.token
 
       },
@@ -119,7 +119,7 @@ export const fetchlogin = (logindata) => async dispatch =>{
         dispatch(getAuthenticate(data))
 
         localStorage.setItem('token', data.token )
-        data &&  message.success({ content: data.msg, key, duration: 2 });
+        // data &&  message.success({ content: data.msg, key, duration: 2 });
 
     } catch (error) {
       error && message.error({ content: error.response.data.msg, key, duration: 1 });
@@ -138,18 +138,12 @@ export const fetchUserProfile = (token) => async dispatch =>{
   }
 
   dispatch(getlogin())
- 
-
 
   try {
-
     const {data} = await axios.get(keyUri.BACKEND_URI + '/companyProfile',  loginConfig)
-
     dispatch(getUserProfile(data))
 
   } catch (error) {
-
- 
           error && message.error('Authentication Failure');
           dispatch(logOut())
 
@@ -177,8 +171,6 @@ if(!value ){
   }
 
 }
-
-
 export const checkAuth = () => async dispatch =>{
 
   console.log('test');
@@ -192,9 +184,7 @@ export const checkAuth = () => async dispatch =>{
   }
  
   try {
-
     const {data} = await axios.get(keyUri.BACKEND_URI + '/companyProfile',  loginConfig)
-
     dispatch(getUserProfile(data))
 
   } catch (error) {

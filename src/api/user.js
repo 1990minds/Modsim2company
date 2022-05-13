@@ -56,9 +56,12 @@ export const userSelector = state => state.user;
 export const fetchAllCompanyUser = (id,company) => async dispatch => {
   dispatch(getuser())
  
+  console.log({id});
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-user/${id}`)
+
+
    console.log(data);
    
    dispatch(getAll_user_success(data));

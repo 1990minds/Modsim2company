@@ -23,9 +23,9 @@ export default function ExportExcel({data}) {
     
             <ExcelColumn label="user_name" value={col => col?.user_name ? col.user_name: "null"}/> 
             <ExcelColumn label="phone_number" value={col => col?.phone_number ? col.phone_number: "null"}/> 
-            <ExcelColumn label="department" value={col => col?.access ? col.access: "department"}/> 
+            <ExcelColumn label="department" value={col => col?.department ? col.department: "null"}/> 
             <ExcelColumn label="email" value={col => col?.email ? col.email: "null"}/> 
-            <ExcelColumn label="full_name" value={col => col?.email ? col.email: "full_name"}/> 
+            <ExcelColumn label="full_name" value={col => col?.full_name ? col.full_name: "null"}/> 
 
         </ExcelSheet>
     </ExcelFile>

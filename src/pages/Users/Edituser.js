@@ -44,7 +44,7 @@ export default function EditUser({current_user,}) {
       form.setFieldsValue({
         user_name:current_user &&  current_user.user_name,
         email:current_user && current_user.email,
-        department:current_user&& current_user. department,
+        department:current_user&& current_user.department,
         license_number:current_user && current_user?.license?.license_number,
         phone_number:current_user && current_user.phone_number,
         full_name:current_user && current_user.full_name,
@@ -74,7 +74,7 @@ export default function EditUser({current_user,}) {
           }
         
       
-   dispatch(updateUser(current_user._id, userdata,user?._id))
+   dispatch(updateUser(current_user?._id, userdata,user?._id))
    form.resetFields()
   
   };
@@ -152,7 +152,7 @@ console.log(validityYear);
             <Row gutter={16}>
               <Col span={12}>
                 <Form.Item
-                  name="Department"
+                  name="department"
                   label="Department"
                   rules={[{ required: true, message: 'Please select a Department' }]}
                 >
@@ -224,29 +224,7 @@ console.log(validityYear);
             <Input.Password  />
           </Form.Item>
               </Col>
-              {/* <Col  span={10}>
-          <Form.Item
-            label={<p >Confirm Password</p>}
-            name="confirm"
-            dependencies={['password']}
-            hasFeedback
-            
-            rules={[
-                {required: true, message: 'Password must be atleast 8 Characters!'},
-              ({ getFieldValue }) => ({
-                validator(rule, value) {
-                  if (!value || getFieldValue('password') === value) {
-                    return Promise.resolve();
-                  }
-    
-                  return Promise.reject('The two Password that you Entered Do Not Match!');
-                },
-              }),
-            ]}
-          >
-            <Input.Password  />
-          </Form.Item>
-              </Col> */}
+      
 </Row>
 
         

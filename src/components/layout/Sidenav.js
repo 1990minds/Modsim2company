@@ -243,12 +243,12 @@ C14.74,4.76,15.69,3.81,16.88,3.81z"
         </Menu.Item>
 
         <Menu.Item className="menu-item-header" key="5">
-          Product Settings
+          Support
         </Menu.Item>
 
 
         <Menu.Item key="4">
-          <NavLink to="/auth/broadcast">
+          <NavLink to="/auth/tickets">
             <span
               className="icon"
               style={{
@@ -257,12 +257,11 @@ C14.74,4.76,15.69,3.81,16.88,3.81z"
             >
               {rtl}
             </span>
-          
-           
-            <span className="label">Broadcast</span>
+            <span className="label">Tickets</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="7">
+
+        {/* <Menu.Item key="7">
           <NavLink to="/auth/chats">
             <span className="icon">{signin}</span>
             <span className="label">Chats</span>
@@ -273,7 +272,7 @@ C14.74,4.76,15.69,3.81,16.88,3.81z"
             <span className="icon">{signup}</span>
             <span className="label">Logs</span>
           </NavLink>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
       <div className="aside-footer">
         <div

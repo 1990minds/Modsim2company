@@ -65,7 +65,7 @@ function App() {
     {/* <Route path="/auth/customer" component={Customer} exact/> */}
     <Route path="/auth/users" component={Users} exact/>
   
-    <Route path="/auth/broadcast" component={Broadcast} exact/>
+    <Route path="/auth/tickets" component={Broadcast} exact/>
     <Route path="/auth/chats" component={Chats} exact/>
     <Route path="/auth/logs" component={Logs} exact/>
     {/* <Route path="/auth/customer/license/:id" component={License} exact/> */}

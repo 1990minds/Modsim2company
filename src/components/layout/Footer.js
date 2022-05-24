@@ -21,8 +21,7 @@ function Footer() {
       <Row className="just">
         <Col xs={24} md={12} lg={12}>
           <div className="copyright">
-            © 2022, made with
-            {<HeartFilled />} by
+            © 2022,by
             <a href="https://modutec.net/" className="font-weight-bold" target="_blank">
               Modutec
             </a>

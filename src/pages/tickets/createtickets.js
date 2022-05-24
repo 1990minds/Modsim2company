@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { Form, Input, Divider, Button, Col, Row, Select, Drawer } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import {useParams} from 'react-router-dom'
 
 import {createtickets} from '../../api/tickets'
 import {authenticateSelector} from '../../api/authSlice';
@@ -20,32 +21,39 @@ const layout = {
   
 export default function Createtickets({cancel}) {
   
-    const [loading, setLoading] = useState(false)
-    const { user } = useSelector(authenticateSelector) 
-    console.log(user);
-//     const { fetAlltickets} = useSelector(ticketsSelector) 
-//   console.log(fetAlltickets);
+  const [visible, setVisible] = useState(false);
+  const showDrawer = () => {
+    setVisible(true);
+  };
+  const onClose = () => {
+    setVisible(false);
+  };
 
-      const dispatch = useDispatch();
-      console.log({K:user});
+  const [loading, setLoading] = useState(false)
+  const { company_id } = useSelector(authenticateSelector) 
+  
+
+    const dispatch = useDispatch();
+    const [validityYear, setYear]=useState(null)
+    const [validityMonth, setMonth]=useState(null)
       
-      useEffect(()=>{
+    const {id} = useParams()
 
-           dispatch(fetchAlltickets(user?._id))
-           
-      }, [dispatch])
+
+
         
   
   const onFinish = (values) => {
   console.log(values);
       const data = {
+        tickets:values.tickets,
         title:values.title,
         description:values.description,
         
          
       }
 
-   dispatch(createtickets(data, user?._id))
+   dispatch(createtickets(data))
    form.resetFields()
    cancel()
   
@@ -65,15 +73,7 @@ export default function Createtickets({cancel}) {
 
 
 
-const [visible, setVisible] = useState(false);
 
-const showDrawer = () => {
-  setVisible(true);
-};
-
-const onClose = () => {
-  setVisible(false);
-};
 
 
     return (

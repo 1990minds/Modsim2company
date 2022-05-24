@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../../components/layout/Main'
 import Createtickets from './createtickets'
 import { Tabs, Button, Input,Upload, Card } from 'antd';
@@ -7,27 +7,48 @@ import {fetchAlltickets,ticketsSelector} from '../../api/tickets'
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
 import axios from 'axios'
+import { fetchOneCompany,companySelector } from '../../api/company'
 import {SearchOutlined,SyncOutlined} from '@ant-design/icons'
 import { useDebounce } from "use-debounce";
 import { keyUri, config } from '../../key'
 import styled from 'styled-components'
 import { Row, Col } from 'antd';
+import {useParams} from 'react-router-dom'
 import Tickettabel from './tickettabel'
 const { Search } = Input;
 
   export default function Database() {
 
     
-    const dispatch = useDispatch()
-    const {all_tickets} = useSelector(ticketsSelector) 
+    const {id}= useParams()
+    const dispatch=useDispatch()    
+    const {current_company,loading}=useSelector(companySelector)
+    const {all_tickets}=useSelector(ticketsSelector)
 
-    const [search, setSearch] = useState('')
-    const [loading, setLoading] = useState(false)
-    const [filter,setFilter]=useState([])
-    const [debouncedText] = useDebounce(search, 2000);
-    
+    console.log(all_tickets);
 
-    console.log({all_tickets});
+    const [visibleLicense, SetLicenseAddVisible] = useState(false)
+
+    console.log(current_company);
+
+    useEffect(()=>{
+        dispatch(fetchOneCompany(id))
+    },[dispatch])
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+      setIsModalVisible(true);
+    };
+  
+    const handleOk = () => {
+      setIsModalVisible(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalVisible(false);
+    };
+  
 
   // console.log(all_parts);
 

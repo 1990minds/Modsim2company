@@ -23,6 +23,7 @@ export default function User() {
   const dispatch = useDispatch()
   const { all_user} = useSelector(userSelector) 
   const { user } = useSelector(authenticateSelector) 
+  
   // const { user } = useSelector(authenticateSelector) 
 
   
@@ -102,7 +103,7 @@ placeholder="Search" onChange={onSearch}  />
       </Col>
       </Row>
 
-        <UserTables data={all_user} />
+        <UserTables data={(filter?.length > 0) ? filter :all_user} />
         
     </Layout>
   )

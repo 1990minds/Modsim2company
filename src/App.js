@@ -44,10 +44,11 @@ import Login from './pages/SignIn'
 import './index.css'
 // import License from "./pages/Customer/License";
 import Users from './pages/Users'
-
+import Broadcast from './pages/broadcast'
 import Tickets from './pages/tickets'
 import Chats from './pages/Chats'
 import Logs from './pages/Logs'
+import Ticketviewer from './pages/tickets/ticketviewer'
 
 function App() {
 
@@ -64,7 +65,8 @@ function App() {
     
     {/* <Route path="/auth/customer" component={Customer} exact/> */}
     <Route path="/auth/users" component={Users} exact/>
-  
+    <Route path="/auth/broadcast" component={Broadcast} exact/>
+    <Route path="/auth/ticketviewer/:id" component={Ticketviewer} exact/>
     <Route path="/auth/tickets" component={Tickets} exact/>
     <Route path="/auth/chats" component={Chats} exact/>
     <Route path="/auth/logs" component={Logs} exact/>

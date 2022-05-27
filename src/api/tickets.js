@@ -42,19 +42,29 @@ export const {gettickets , getAll_tickets_success, getCurrentSuccess, get_ticket
 
 export const ticketsSelector = state => state.tickets;
 
-export const fetchAlltickets = () => async dispatch =>{
+export const fetchAllCompanyTickets = (id) => async dispatch => {
     dispatch(gettickets())
-
-    try{
-        const {data} = await axios.get(keyUri.BACKEND_URI +`/tickets`)
-         
-        dispatch(getAll_tickets_success(data));
+   
+    console.log({id});
+    try {
+   
+     const {data} = await axios.get(keyUri.BACKEND_URI +`/companytickets/${id}`)
+  
+  
+     console.log(data);
+     
+     dispatch(getAll_tickets_success(data));
+      
     } catch (error) {
-
-        dispatch(get_tickets_failure())
-
+   
+   dispatch(get_tickets_failure())
+  
     }
-};
+   };
+
+
+
+
 
 export const fetchOneTickets = (id) => async dispatch => {
     dispatch(gettickets())
@@ -84,7 +94,7 @@ export const updatetickets = (id, valuse) => async dispatch =>{
     }
 }
 
-export const createtickets = ( values,tickets) => async dispatch => {
+export const createtickets = ( values,id) => async dispatch => {
 
     dispatch(gettickets())
     const key = 'create';
@@ -93,7 +103,7 @@ export const createtickets = ( values,tickets) => async dispatch => {
    
      const {data} = await axios.post(keyUri.BACKEND_URI +`/tickets`, values, config)
      data && message.success({ content: data.msg, key, duration: 2 });
-     dispatch(fetchAlltickets(tickets));
+     dispatch(fetchAllCompanyTickets(id));
   
     } 
     catch ({response}) {

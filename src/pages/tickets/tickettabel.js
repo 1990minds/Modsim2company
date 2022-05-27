@@ -94,12 +94,12 @@ import {
       },
       
       
-      {
-        title: 'Description',
-        dataIndex: 'description',
-        key: 'description',
-        width: 200,
-      },
+      // {
+      //   title: 'Description',
+      //   dataIndex: 'description',
+      //   key: 'description',
+      //   width: 200,
+      // },
 
     
     ];

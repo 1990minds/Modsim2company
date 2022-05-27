@@ -73,10 +73,6 @@ export const fetchAllCompanyUser = (id,company) => async dispatch => {
   }
  };
 
-
-
-  
-
  export const deleteUser = (id, user,company) => async dispatch => {
 
   dispatch(getuser())
@@ -96,7 +92,7 @@ export const fetchAllCompanyUser = (id,company) => async dispatch => {
   }
  };
 
- export const createuser = ( values,company) => async dispatch => {
+export const createuser = ( values,company) => async dispatch => {
 
   dispatch(getuser())
   const key = 'create';
@@ -115,8 +111,6 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
   }
  };
-
-
 
  export const fetchOneUser = (id) => async dispatch => {
 

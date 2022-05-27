@@ -1,60 +1,60 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import Layout from '../../components/layout/Main'
-import Createtickets from './createtickets'
+import React, {useEffect, useState, useLayoutEffect} from 'react'
+import Layout  from '../../components/layout/Main'
+import BroadcastTabel from './broadcastetable'
 import { Tabs, Button, Input,Upload, Card } from 'antd';
-import {fetchAllCompanyTickets,ticketsSelector} from '../../api/tickets'
+import {fetchAllbroadcastCustomers,broadcastSelector} from '../../api/broadcast'
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
+import { PlusOutlined } from '@ant-design/icons';
+// import ExcelBtn from './exportexcel'
 import axios from 'axios'
-import { fetchOneCompany,companySelector } from '../../api/company'
 import {SearchOutlined,SyncOutlined} from '@ant-design/icons'
 import { useDebounce } from "use-debounce";
 import { keyUri, config } from '../../key'
 import styled from 'styled-components'
 import { Row, Col } from 'antd';
-import {useParams} from 'react-router-dom'
-import Tickettabel from './tickettabel'
+import './index.css'
 const { Search } = Input;
 
   export default function Database() {
 
     
-    const {id}= useParams()
-    const dispatch=useDispatch()    
-    const {all_tickets}=useSelector(ticketsSelector)
-    const {current_company,loader}=useSelector(companySelector)
-    const { user } = useSelector(authenticateSelector) 
-    
+    const dispatch = useDispatch()
+    const {all_broadcast} = useSelector(broadcastSelector) 
+    const { broadcast } = useSelector(authenticateSelector) 
+    const [broadcastAddVisible, SetBroadcastAddVisible] = useState(false)
+
+
     const [search, setSearch] = useState('')
     const [loading, setLoading] = useState(false)
     const [filter,setFilter]=useState([])
     const [debouncedText] = useDebounce(search, 2000);
+    
 
-    console.log(all_tickets);
+    console.log(all_broadcast);
 
-    console.log({user});
-   
+  // console.log(all_broadcast);
 
+  
 
   useEffect(()=>{
 
-    axios.get(keyUri.BACKEND_URI +`/companytickets/${user?._id}?search=${debouncedText}`).then(({data})=>{
- 
+    axios.get(keyUri.BACKEND_URI +`/broadcast?search=${debouncedText}`).then(({data})=>{
+      console.log(
+        'text'
+      );
+      console.log({data})
 
-
-      setFilter(data?.filtertickets)
+      setFilter(data?.filterbroadcast)
        })
   setLoading(false)
-   }, [debouncedText])
+   }, [dispatch, debouncedText])
 
 console.log(filter);
- 
 
-
-useEffect(()=>{
-  dispatch(fetchAllCompanyTickets(user?._id))
-},[user])
+  useEffect(()=>{
+    dispatch(fetchAllbroadcastCustomers())
+        }, [dispatch])
 
         useEffect(()=>{     
           if(filter?.length < 1) {
@@ -68,14 +68,13 @@ useEffect(()=>{
           setSearch(e.target.value)
         
         }
+       
 
-    
   return (
     <Layout>
       <Row>
       <Col span={8}>
-      < Createtickets  />
-     
+
       </Col>
       <Col span={3} offset={10} >
       <SearchWrap className="mx-4 " style={{borderRadius:"20px"}}>
@@ -84,14 +83,14 @@ useEffect(()=>{
         }
         placeholder="Search" onChange={onSearch}  />
         </SearchWrap>
-        </Col> 
-         {/* <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
-        <ExcelBtn data={all_parts}  />
-      </Col> */}
+        </Col>
+        <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
+        {/* <ExcelBtn data={all_broadcast}  /> */}
+      </Col>
       </Row>
 
-        {/* <PartsTabel data={(filter?.length > 0) ? filter :all_parts} />  */}
-        < Tickettabel data={(filter?.length > 0) ? filter :all_tickets} />
+        <BroadcastTabel data={(filter?.length > 0) ? filter :all_broadcast} />
+        
     </Layout>
   )
         

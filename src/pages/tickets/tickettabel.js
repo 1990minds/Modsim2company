@@ -40,9 +40,6 @@ import {
 
       const [visible, setVisible] = useState(false);
 
-    
-      
-
       const handleClickEdit = (e, isvisible, id) =>{
         e.preventDefault()
         setParts(id)
@@ -58,6 +55,7 @@ import {
     {
       title: ' Sl No.',
       dataIndex: 'sl_no',
+      width: 100,
       key: 'sl_no',
       render:(t, k, i)=>{
         return <p class="m-0 ">{(page - 1) * 10 + (i+1)}</p>
@@ -66,32 +64,41 @@ import {
     },
 
       {
+        width: 200,
         title: 'Ticket ID',
         dataIndex: 'ticket_id',
         key: 'ticket_id',
       },
 
      
-      {
-        title: 'Company Name',
-        dataIndex: 'company_name',
-        key: 'company_name',
+      // {
+      //   title: 'Company Name',
+      //   dataIndex: 'company_name',
+      //   key: 'company_name',
         
-      },
+      // },
 
      
-      {
-        title: 'Email ID',
-        dataIndex: 'email_id',
-        key: 'email_id',
+      // {
+      //   title: 'Email ID',
+      //   dataIndex: 'email_id',
+      //   key: 'email_id',
         
-      },
+      // },
 
       {
         title: 'Title',
         dataIndex: 'title',
         key: 'title',
-        
+        width: 200,
+      },
+      
+      
+      {
+        title: 'Description',
+        dataIndex: 'description',
+        key: 'description',
+        width: 200,
       },
 
     
@@ -128,7 +135,7 @@ import {
                     onRow={(record, rowIndex) => {
                       return {
                         
-                        onClick: event => {  history.push(`/auth/customer/license/${record._id}`) }    , // click row
+                        onClick: event => {  history.push(`/auth/ticketviewer/${record._id}`) } , // click row
                       };
                     }}
                     />

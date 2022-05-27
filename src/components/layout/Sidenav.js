@@ -246,6 +246,20 @@ C14.74,4.76,15.69,3.81,16.88,3.81z"
           Support
         </Menu.Item>
 
+        <Menu.Item key="6">
+          <NavLink to="/auth/broadcast">
+            <span
+              className="icon"
+              style={{
+                background: page === "profile" ? color : "",
+              }}
+            >
+              {profile}
+            </span>
+            <span className="label">Broadcast</span>
+          </NavLink>
+        </Menu.Item>
+
 
         <Menu.Item key="4">
           <NavLink to="/auth/tickets">

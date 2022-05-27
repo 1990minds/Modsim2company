@@ -15,7 +15,7 @@ export const initialState = {
     loading:false,
     hasErrors:false,
    isAuthenticate:  token? true : false,
-   user:user,
+   user:null,
    token:token,
    current:[],
    filter:[]
@@ -185,6 +185,7 @@ export const checkAuth = () => async dispatch =>{
  
   try {
     const {data} = await axios.get(keyUri.BACKEND_URI + '/companyProfile',  loginConfig)
+    console.log(data)
     dispatch(getUserProfile(data))
 
   } catch (error) {

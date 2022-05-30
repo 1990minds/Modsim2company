@@ -10,7 +10,7 @@ import {SearchOutlined,SyncOutlined} from '@ant-design/icons'
 import { useDebounce } from "use-debounce";
 import { keyUri, config } from '../../key'
 import styled from 'styled-components'
-import { Tabs, Button,Row,Col, Input,Upload } from 'antd';
+import { Tabs, Tooltip,Row,Col, Input,Upload } from 'antd';
 import {authenticateSelector} from '../../api/authSlice'
 import { PlusOutlined } from '@ant-design/icons';
 
@@ -86,9 +86,12 @@ useEffect(()=>{
     <Layout>
        <Row>
       <Col span={8}>
+      
       < Createuser icon={<PlusOutlined />} />
+     
       </Col>
       <Col span={3} offset={10} >
+        <Tooltip placement="top" title="Search by Phone, Email, Name">
       <SearchWrap className="mx-4 " style={{borderRadius:"4px"}}>
 
 <Input value={search}  className="px-4 py-2 focus:outline-none"
@@ -96,10 +99,12 @@ prefix ={  <SearchOutlined  style={{color:'#3e79f7', fontWeight:'bold'}} />
 }
 placeholder="Search" onChange={onSearch}  />
 </SearchWrap>
-
+</Tooltip>
         </Col>
         <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
+        
         <ExcelBtn data={all_user} />
+        
       </Col>
       </Row>
 

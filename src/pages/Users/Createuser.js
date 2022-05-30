@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import styled from 'styled-components'
-import { Form, Input, Divider, Button, Col, Row, Select, Drawer,  DatePicker, Upload, InputNumber, Switch  } from 'antd';
+import { Form, Input, Divider, Button, Col, Row, Select, Drawer,  Tooltip, Upload, InputNumber, Switch  } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 import {createuser} from '../../api/user'
@@ -87,10 +87,11 @@ const onClose = () => {
 
     return (
       <>
+      <Tooltip placement="top" title="Create new user">
         <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />} style={{fontSize: "14px"}}>
           Create
         </Button>
-        
+        </Tooltip>
         <Drawer
           title="Create a new User" placement="right" onClose={onClose} visible={visible} width={720}
         >

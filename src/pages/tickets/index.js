@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Layout from '../../components/layout/Main'
 import Createtickets from './createtickets'
-import { Tabs, Button, Input,Upload, Card } from 'antd';
+import { Tabs, Button, Input,Upload, Tooltip } from 'antd';
 import {fetchAllCompanyTickets,ticketsSelector} from '../../api/tickets'
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
@@ -78,12 +78,14 @@ useEffect(()=>{
      
       </Col>
       <Col span={3} offset={10} >
+      <Tooltip placement="top" title="Search by Ticket ID">
       <SearchWrap className="mx-4 " style={{borderRadius:"20px"}}>
       <Input value={search}  className="px-4 py-2 focus:outline-none"
         prefix ={  <SearchOutlined  style={{color:'#3e79f7', fontWeight:'bold'}} />
         }
         placeholder="Search" onChange={onSearch}  />
         </SearchWrap>
+        </Tooltip>
         </Col> 
          {/* <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
         <ExcelBtn data={all_parts}  />

@@ -4,7 +4,7 @@ import {
     Row,
     Col,
     Card,
-    Radio,
+    Tooltip,
     Table,
     Space,
     Drawer,
@@ -122,16 +122,22 @@ import {
               
             <h5 className="text-secondary" >
             
-
+            <Tooltip placement="top" title="Edit User">
               <FaRegEdit onClick={(e)=>handleClickEdit(e, true, id)} style={{cursor:"pointer", color: "#1890FF"}} /> 
-               
+            </Tooltip>
               
               
               </h5>
           <h5 className="text-danger">
+
+         
               <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
+ <Tooltip placement="top" title="Delete User">
                   <FaRegTrashAlt style={{cursor:"pointer", color: "#1890FF"}}  />
+</Tooltip>
               </DeleteConfirm>
+              
+
           </h5>
 
           </Space>
@@ -184,11 +190,13 @@ import {
             </Col>
           </Row>
         </div>
+       
                    <Drawer
           title="Update a existing user" placement="right" onClose={onClose} visible={visible} width={720}
         >
           <Edituser current_user={current_user} cancel={onClose}/>
         </Drawer>
+  
       </>
     );
   }

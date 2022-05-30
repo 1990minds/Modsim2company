@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { Form, Input, Divider,Upload ,Image, Button, Col, Row, Select, Drawer } from 'antd';
+import { Form, Input, Tooltip,Upload ,Image, Button, Col, Row, Select, Drawer } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import {useParams} from 'react-router-dom'
 import Loader from '../../pages/shared/loader';
@@ -129,10 +129,11 @@ console.log(user);
 
     return (
       <>
+      <Tooltip placement="top" title="Raise a new ticket">
         <Button type="primary" onClick={showDrawer} style={{fontSize: "14px"}}>
         Raise Ticket 
         </Button>
-        
+        </Tooltip>
         <Drawer
           title="Raise a ticket" placement="right" onClose={onClose} visible={visible} width={720}
         >

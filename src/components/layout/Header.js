@@ -41,7 +41,7 @@ import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
 import {LastWord} from './lastpathword'
 import {logOut} from '../../api/authSlice'
-
+import { FaUserCog } from 'react-icons/fa';
 const ButtonContainer = styled.div`
   .ant-btn-primary {
     background-color: #1890ff;
@@ -292,7 +292,7 @@ function Header({
           <div className="ant-page-header-heading">
             <span
               className="ant-page-header-heading-title"
-              style={{ textTransform: "capitalize" , fontSize: "24px" , paddingTop: '10px'}}
+              style={{ textTransform: "capitalize" , fontSize: "24px" , paddingTop: '10px', paddingBottom: '10px'}}
             >
               {/* {subName.replace("/", "")} */}
               {LastWord(name.split('-').join(' ')) }
@@ -425,20 +425,17 @@ function Header({
           </Link>
           
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Badge size="small" count={4}>
-            <Dropdown overlay={menu} trigger={["click"]}>
-              <a
-                href="#pablo"
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
-              >
-                {bell}
-              </a>
-            </Dropdown>
+          <div style={{ paddingLeft: '20px', paddingRight: '20px'}}>
+            <Link to='/auth/userprofile'>
+          <Badge size="small">
+          <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/>
           </Badge>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </Link>
+         </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
           <Badge size="small">
           <CalendarFilled />
+        
           </Badge>
           {/* <Input
             className="header-search"

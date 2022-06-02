@@ -49,7 +49,7 @@ import Tickets from './pages/tickets'
 import Chats from './pages/Chats'
 import Logs from './pages/Logs'
 import Ticketviewer from './pages/tickets/ticketviewer'
-
+import UserProfile from './pages/UserProfile'
 function App() {
 
   // let { path } = useRouteMatch();
@@ -70,6 +70,7 @@ function App() {
     <Route path="/auth/tickets" component={Tickets} exact/>
     <Route path="/auth/chats" component={Chats} exact/>
     <Route path="/auth/logs" component={Logs} exact/>
+    <Route path="/auth/userprofile" component={UserProfile} exact />
     {/* <Route path="/auth/customer/license/:id" component={License} exact/> */}
 
      </main>

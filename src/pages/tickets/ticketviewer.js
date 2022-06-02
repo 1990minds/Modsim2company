@@ -92,10 +92,10 @@ const onFinishFailed = (errorInfo) => {
       </h2>}
       // avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />}
       content={
-        <h2><b>Issue Title :</b> {current_tickets?.title}</h2>}
+        <h3><b>Issue Title :</b> <h3>{current_tickets?.title}</h3></h3>}
         children={
         <p style={{ lineHeight: '30px', paddingLeft: '20px', paddingRight: '30px', fontSize:'16px', textAlign: 'justify'}}>
-        <b>Issue Description :</b>  {current_tickets?.description}
+        <b>Issue Description :</b> <p> {current_tickets?.description}</p>
         <br/><br/>
         <b>Issue Screenshot:</b>
         <br/><br/>
@@ -103,12 +103,12 @@ const onFinishFailed = (errorInfo) => {
           width={400}
           src={current_tickets?.issue_image}/>
         <br/><br/>
-        <Card>
-        <b>Comment :</b> {current_tickets?.comment}
+        <Divider />
+        <b>Comment :</b> <p>{current_tickets?.comment} ? {current_tickets?.comment} : <p></p></p>
         <br/><br/>
-        <b>Remark :</b> {current_tickets?.remark}
+        <b>Remark :</b> <p>{current_tickets?.remark}</p>
         <br/><br/>
-        </Card>
+        
         </p>
         
       }
@@ -118,7 +118,7 @@ const onFinishFailed = (errorInfo) => {
       //   </Tooltip>
       // }
     />
-    <div  justify="space-around" align="end" style={{ paddingLeft:'10%', paddingRight: '10%', paddingTop:'5%', width: '100%' }}>
+    {/* <div  justify="space-around" align="end" style={{ paddingLeft:'10%', paddingRight: '10%', paddingTop:'5%', width: '100%' }}>
     <Form layout="vertical" hideRequiredMark
             
             form={form}
@@ -141,7 +141,7 @@ const onFinishFailed = (errorInfo) => {
           />
           </Form.Item>
           </Form>
-          </div>
+          </div> */}
     </Card>
     </Col>
     {/* <Col flex="0 1 300px" justify="space-around" align="middle">

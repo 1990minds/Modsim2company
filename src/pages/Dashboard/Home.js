@@ -162,104 +162,104 @@ function Home() {
 
   const list = [
     {
-      img: ava1,
-      Title: "Soft UI Shopify Version",
+      // img: ava1,
+      Title: "Lorem Ipsum",
       bud: "$14,000",
       progress: <Progress percent={60} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team2} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Alexander Smith">
+      //       <img className="tootip-img" src={team3} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Jessica Doe">
+      //       <img className="tootip-img" src={team4} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
     {
-      img: ava2,
-      Title: "Progress Track",
+      // img: ava2,
+      Title: "Lorem Ipsum",
       bud: "$3,000",
       progress: <Progress percent={10} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team2} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
     {
-      img: ava3,
-      Title: "Fix Platform Errors",
+      // img: ava3,
+      Title: "Lorem Ipsum",
       bud: "Not Set",
       progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Alexander Smith">
+      //       <img className="tootip-img" src={team3} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
     {
-      img: ava4,
-      Title: "Launch new Mobile App",
+      // img: ava4,
+      Title: "Lorem Ipsum",
       bud: "$20,600",
       progress: <Progress percent={100} size="small" status="active" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team2} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
     {
-      img: ava5,
-      Title: "Add the New Landing Page",
+      // img: ava5,
+      Title: "Lorem Ipsum",
       bud: "$4,000",
       progress: <Progress percent={80} size="small" />,
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Alexander Smith">
-            <img className="tootip-img" src={team3} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Jessica Doe">
-            <img className="tootip-img" src={team4} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team2} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Alexander Smith">
+      //       <img className="tootip-img" src={team3} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Jessica Doe">
+      //       <img className="tootip-img" src={team4} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
 
     {
-      img: ava6,
-      Title: "Redesign Online Store",
+      // img: ava6,
+      Title: "Lorem Ipsum",
       bud: "$2,000",
       progress: (
         <Progress
@@ -269,16 +269,16 @@ function Home() {
           format={() => "Cancel"}
         />
       ),
-      member: (
-        <div className="avatar-group mt-2">
-          <Tooltip placement="bottom" title="Ryan Tompson">
-            <img className="tootip-img" src={team1} alt="" />
-          </Tooltip>
-          <Tooltip placement="bottom" title="Romina Hadid">
-            <img className="tootip-img" src={team2} alt="" />
-          </Tooltip>
-        </div>
-      ),
+      // member: (
+      //   <div className="avatar-group mt-2">
+      //     <Tooltip placement="bottom" title="Ryan Tompson">
+      //       <img className="tootip-img" src={team1} alt="" />
+      //     </Tooltip>
+      //     <Tooltip placement="bottom" title="Romina Hadid">
+      //       <img className="tootip-img" src={team2} alt="" />
+      //     </Tooltip>
+      //   </div>
+      // ),
     },
   ];
 
@@ -382,9 +382,9 @@ function Home() {
               <div className="project-ant">
                 <div>
                   <Title level={5}>Projects</Title>
-                  <Paragraph className="lastweek">
+                  {/* <Paragraph className="lastweek">
                     done this month<span className="blue">40%</span>
-                  </Paragraph>
+                  </Paragraph> */}
                 </div>
                 <div className="ant-filtertabs">
                   <div className="antd-pro-pages-dashboard-analysis-style-salesExtra">
@@ -401,7 +401,7 @@ function Home() {
                   <thead>
                     <tr>
                       <th>COMPANIES</th>
-                      <th>MEMBERS</th>
+                      
                       <th>BUDGET</th>
                       <th>COMPLETION</th>
                     </tr>
@@ -419,7 +419,7 @@ function Home() {
                             {d.Title}
                           </h6>
                         </td>
-                        <td>{d.member}</td>
+                        {/* <td>{d.member}</td> */}
                         <td>
                           <span className="text-xs font-weight-bold">
                             {d.bud}{" "}
@@ -433,7 +433,7 @@ function Home() {
                   </tbody>
                 </table>
               </div>
-              <div className="uploadfile shadow-none">
+              {/* <div className="uploadfile shadow-none">
                 <Upload {...uploadProps}>
                   <Button
                     type="dashed"
@@ -443,16 +443,16 @@ function Home() {
                     <span className="click">Click to Upload</span>
                   </Button>
                 </Upload>
-              </div>
+              </div> */}
             </Card>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={8} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
               <div className="timeline-box">
-                <Title level={5}>Orders History</Title>
-                <Paragraph className="lastweek" style={{ marginBottom: 24 }}>
+                <Title level={5} style={{ marginBottom: 24 }}> History</Title>
+                {/* <Paragraph className="lastweek" style={{ marginBottom: 24 }}>
                   this month <span className="bnb2">20%</span>
-                </Paragraph>
+                </Paragraph> */}
 
                 <Timeline
                   pending="Recording..."
@@ -466,13 +466,13 @@ function Home() {
                     </Timeline.Item>
                   ))}
                 </Timeline>
-                <Button
+                {/* <Button
                   type="primary"
                   className="width-100"
                   onClick={() => setReverse(!reverse)}
                 >
-                  {<MenuUnfoldOutlined />} REVERSE
-                </Button>
+                  {<MenuUnfoldOutlined />} View More
+                </Button> */}
               </div>
             </Card>
           </Col>
@@ -495,8 +495,7 @@ function Home() {
                       <Text>Built by developers</Text>
                       <Title level={5}>Modutec</Title>
                       <Paragraph className="lastweek mb-36">
-                        From colors, cards, typography to complex elements, you
-                        will find the full documentation.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                       </Paragraph>
                     </div>
                     <div className="card-footer">
@@ -529,8 +528,7 @@ function Home() {
                 <div className="card-content">
                   <Title level={5}>Work with the best</Title>
                   <p>
-                    Wealth creation is an evolutionarily recent positive-sum
-                    game. It is all about who take the opportunity first.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                   </p>
                 </div>
                 <div className="card-footer">

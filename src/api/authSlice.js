@@ -15,7 +15,7 @@ export const initialState = {
     loading:false,
     hasErrors:false,
    isAuthenticate:  token? true : false,
-   user:null,
+   user:user,
    token:token,
    current:[],
    filter:[]

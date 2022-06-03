@@ -56,9 +56,9 @@ export default function Edituser() {
 
   const remove = (e, url) =>{
 
-  setImgurl(prev => prev.filter(item => item !== url))
+    setImgurl(prev => prev.filter(item => item !== url))
     
-  }
+    }
 
     const uploadButton = (
       <div>

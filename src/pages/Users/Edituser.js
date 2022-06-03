@@ -141,7 +141,7 @@ console.log(validityYear);
               <Col span={12}>
                 <Form.Item
                   name="full_name"
-                  label="Full name"
+                  label="User name"
                   rules={[{ required: true, message: 'Please enter Full name' }]}
                 >
                   <Input />
@@ -192,7 +192,7 @@ console.log(validityYear);
               
             </Row>
 
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
               <Col span={20}>
                 <Form.Item
                   type="user_name"
@@ -204,7 +204,7 @@ console.log(validityYear);
                 </Form.Item>
               </Col>
               
-            </Row>
+            </Row> */}
 
 <Row gutter={16}>
 <Col span={10}>

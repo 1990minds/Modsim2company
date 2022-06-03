@@ -135,7 +135,7 @@ const onClose = () => {
               <Col span={12}>
                 <Form.Item
                   name="full_name"
-                  label="Full name"
+                  label="User name"
                   rules={[{ required: true, message: 'Please enter Full name' }]}
                 >
                   <Input />
@@ -185,7 +185,7 @@ const onClose = () => {
               
             </Row>
 
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
               <Col span={20}>
                 <Form.Item
                   type="user_name"
@@ -197,7 +197,7 @@ const onClose = () => {
                 </Form.Item>
               </Col>
               
-            </Row>
+            </Row> */}
 
 <Row gutter={16}>
 <Col span={10}>

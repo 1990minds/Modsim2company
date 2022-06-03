@@ -54,7 +54,8 @@ import {
   const dispatch = useDispatch()
 
   const confirm = (e, id) => {
-    dispatch(deleteUser(id._id, id.user))
+    console.log(id.company._id)
+    dispatch(deleteUser(id._id,id, id?.company?._id))
    
   }
   
@@ -80,18 +81,18 @@ import {
     },
 
     {
-      title: ' Full name',
+      title: ' User name',
       dataIndex: 'full_name',
       key: 'full_name',
       
     },
 
-    {
-      title: ' User name',
-      dataIndex: 'user_name',
-      key: 'user_name',
+    // {
+    //   title: ' User name',
+    //   dataIndex: 'user_name',
+    //   key: 'user_name',
       
-    },
+    // },
    
     
     {
@@ -131,11 +132,11 @@ import {
           <h5 className="text-danger">
 
          
-              <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
+              {/* <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
  <Tooltip placement="top" title="Delete User">
                   <FaRegTrashAlt style={{cursor:"pointer", color: "#1890FF"}}  />
 </Tooltip>
-              </DeleteConfirm>
+              </DeleteConfirm> */}
               
 
           </h5>

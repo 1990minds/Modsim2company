@@ -105,26 +105,7 @@ export const fetchAllCompany = () => async dispatch => {
 
 
 
- export const createcompany = ( values) => async dispatch => {
-
-  dispatch(getcompany())
-  const key = 'create';
-  message.loading({ content: 'loading...', key })
-  try {
  
-   const {data} = await axios.post(keyUri.BACKEND_URI +`/company`, values, config)
-
-   data && message.success({ content: data.msg, key, duration: 2 });
-   dispatch(fetchAllCompany());
-
-  } 
-  catch ({response}) {
-response.data && message.error({ content: response.data.msg, key, duration: 2 })
- dispatch(get_company_Failure())
-
-  }
- };
-
 
 
  export const fetchOneCompany = (id) => async dispatch => {
@@ -164,33 +145,6 @@ console.log(response.data);
 }
 }
 
-// export const deleteManyCompany = (values) => async dispatch =>{
-
-//   console.log(values);
-//   const key = 'delete';
-//   dispatch(getcompany())
-//   message.loading({ content: 'loading...', key })
-
-//   try {
-      
-//       const {data} = await axios.post(keyUri + `/delete-company`, values, config )
-  
-//       data &&  message.success({ content: data.msg, key, duration: 2 });
-
-//       dispatch(fetchAllCompany())
-
-//   } catch (error) {
-
-// dispatch(get_company_Failure())
-// setTimeout(() => {
-
-//   message.error({ content: error.response.data.msg, key, duration: 2 });
-// }, 100) 
-
-      
-//   }
-
-// }
 
 
 

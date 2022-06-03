@@ -185,7 +185,7 @@ console.log(user);
               <Form.Item
             label={<p className="text-left m-0 ml-2 ">Upload Issue Image</p>}
             name="issue_image"
-            rules={[{ required: true, message: 'required!' }]}
+            // rules={[{ required: true, message: 'required!' }]}
           >
                 <div 
                     className=" grid grid-cols-4 gap-5">

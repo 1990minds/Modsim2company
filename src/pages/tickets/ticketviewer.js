@@ -104,9 +104,10 @@ const onFinishFailed = (errorInfo) => {
           src={current_tickets?.issue_image}/>
         <br/><br/>
         <Divider />
-        <b>Comment :</b> <p>{current_tickets?.comment} ? {current_tickets?.comment} : <p></p></p>
+        
+       {current_tickets?.comment.length>0 && <> <b>Comment :</b> <p>{ current_tickets?.comment }</p></>}
         <br/><br/>
-        <b>Remark :</b> <p>{current_tickets?.remark}</p>
+        {current_tickets?.remark && <><b>Remark :</b> <p>{current_tickets?.remark}</p></>}
         <br/><br/>
         
         </p>

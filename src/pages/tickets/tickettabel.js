@@ -9,6 +9,7 @@ import {
   import { Input } from "antd";
   import {useDispatch} from 'react-redux'
   import styled from 'styled-components'
+  import moment from "moment";
 
   
   function Tables({data}) {
@@ -68,6 +69,16 @@ import {
         title: 'Ticket ID',
         dataIndex: 'ticket_id',
         key: 'ticket_id',
+      },
+
+      {
+        title: 'Date',
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        width: 200,
+        render:(createdAt)=>{
+          return <small className="my-0 mr-3">{moment(createdAt).format('DD/MM/YYYY')}</small>
+      }
       },
 
      

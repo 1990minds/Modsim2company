@@ -85,12 +85,7 @@ import {
         key: 'title',
        
       }, 
-          
-        {
-          title: 'Target',
-          dataIndex: 'target',
-          key: 'target',
-        },
+         
 
         {
           title: 'Date',

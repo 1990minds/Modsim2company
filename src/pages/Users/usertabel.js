@@ -54,7 +54,8 @@ import {
   const dispatch = useDispatch()
 
   const confirm = (e, id) => {
-    dispatch(deleteUser(id._id, id.user))
+    console.log(id.company._id)
+    dispatch(deleteUser(id._id,id, id?.company?._id))
    
   }
   
@@ -80,30 +81,18 @@ import {
     },
 
     {
-      title: ' Full name',
+      title: ' User name',
       dataIndex: 'full_name',
       key: 'full_name',
       
     },
 
     {
-      title: ' User name',
-      dataIndex: 'user_name',
-      key: 'user_name',
-      
-    },
-   
-    
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-      
-    },
-    {
-      title: 'Phone',
-      dataIndex: 'phone_number',
-      key: 'phone_number',
+      title: ' License Number',
+      key: 'license_number',
+      render:(item)=>{
+        return <p class="m-0 ">{item?.license?.license_number}</p>
+      }
       
     },
 
@@ -113,6 +102,24 @@ import {
       key: 'department',
       
     },
+
+    {
+      title: 'Phone',
+      dataIndex: 'phone_number',
+      key: 'phone_number',
+      
+    },
+
+   
+   
+    
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+      
+    },
+  
         
         {
           title: 'Action',
@@ -131,11 +138,11 @@ import {
           <h5 className="text-danger">
 
          
-              <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
+              {/* <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
  <Tooltip placement="top" title="Delete User">
                   <FaRegTrashAlt style={{cursor:"pointer", color: "#1890FF"}}  />
 </Tooltip>
-              </DeleteConfirm>
+              </DeleteConfirm> */}
               
 
           </h5>
@@ -192,7 +199,7 @@ import {
         </div>
        
                    <Drawer
-          title="Update a existing user" placement="right" onClose={onClose} visible={visible} width={720}
+          title="Update a Existing User" placement="right" onClose={onClose} visible={visible} width={720}
         >
           <Edituser current_user={current_user} cancel={onClose}/>
         </Drawer>

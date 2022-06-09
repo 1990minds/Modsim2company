@@ -23,7 +23,9 @@ export default function Createuser({cancel}) {
     const { user } = useSelector(authenticateSelector) 
     console.log(user);
     const { all_active_license} = useSelector(licenseSelector) 
-  console.log(all_active_license);
+
+
+  console.log({all_active_license});
 
       const dispatch = useDispatch();
       console.log({K:user});
@@ -32,7 +34,7 @@ export default function Createuser({cancel}) {
 
            dispatch(fetchAllcompanyactiveLicense(user?._id))
            
-      }, [dispatch])
+      }, [user])
         
   
   const onFinish = (values) => {
@@ -93,7 +95,7 @@ const onClose = () => {
         </Button>
         </Tooltip>
         <Drawer
-          title="Create a new User" placement="right" onClose={onClose} visible={visible} width={720}
+          title="Create a New User" placement="right" onClose={onClose} visible={visible} width={720}
         >
           <Form layout="vertical" hideRequiredMark
            form={form}
@@ -135,7 +137,7 @@ const onClose = () => {
               <Col span={12}>
                 <Form.Item
                   name="full_name"
-                  label="Full name"
+                  label="User name"
                   rules={[{ required: true, message: 'Please enter Full name' }]}
                 >
                   <Input />
@@ -153,12 +155,12 @@ const onClose = () => {
                  <Input />
                 </Form.Item>
               </Col>
-            </Row>
+         
 
-            <Divider />
+        
 
-            <Row gutter={16}>
-              <Col span={20}>
+            
+              <Col span={12}>
                 <Form.Item
                   type="phone_number"
                   name="phone_number"
@@ -185,7 +187,7 @@ const onClose = () => {
               
             </Row>
 
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
               <Col span={20}>
                 <Form.Item
                   type="user_name"
@@ -197,7 +199,7 @@ const onClose = () => {
                 </Form.Item>
               </Col>
               
-            </Row>
+            </Row> */}
 
 <Row gutter={16}>
 <Col span={10}>

@@ -74,7 +74,7 @@ export const fetchAllCompanyUser = (id,company) => async dispatch => {
  };
 
  export const deleteUser = (id, user,company) => async dispatch => {
-
+console.log({company})
   dispatch(getuser())
   const key = 'create';
   message.loading({ content: 'loading...', key })

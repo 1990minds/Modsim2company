@@ -113,8 +113,6 @@ useEffect(() =>{
            style={{ textAlign: 'center', display: 'flex', justifyContent: 'center' }}
 
           >
-
-      
   
       <div style={{ width: '30%' }}>
           <h1 style={{ fontSize: '1.5rem', fontWeight: '700'}}> Update Information</h1>
@@ -131,7 +129,7 @@ useEffect(() =>{
 
                   return <div className=" imglist  bg-gray-50 text-center" style={{height:"100px"}}>
                    
-                  <Image    
+                  <Avatar    
                    preview={false}               
                    key={i}
                    className="  rounded col-span-1  block  object-cover"

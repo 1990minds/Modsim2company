@@ -94,7 +94,7 @@ export const logOut = () => async dispatch =>{
     try {
                
         localStorage.removeItem('token');
-        window.location.reload();
+        window.location.href='/';
 
     } catch (error) {
 

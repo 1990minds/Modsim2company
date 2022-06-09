@@ -160,12 +160,11 @@ console.log(validityYear);
                  
                 </Form.Item>
               </Col>
-            </Row>
+        
 
-            <Divider />
 
-            <Row gutter={16}>
-              <Col span={20}>
+        
+              <Col span={12}>
                 <Form.Item
                   type="phone_number"
                   name="phone_number"
@@ -179,7 +178,7 @@ console.log(validityYear);
             </Row>
 
             <Row gutter={16}>
-              <Col span={20}>
+              <Col span={12}>
                 <Form.Item
                   type="email"
                   name="email"
@@ -190,7 +189,7 @@ console.log(validityYear);
                 </Form.Item>
               </Col>
               
-            </Row>
+           
 
             {/* <Row gutter={16}>
               <Col span={20}>
@@ -206,10 +205,10 @@ console.log(validityYear);
               
             </Row> */}
 
-<Row gutter={16}>
-<Col span={10}>
+
+<Col span={12}>
 <Form.Item
-            label={<p >Update Password</p>}
+            label="Update Password"
             name="password"
             rules={[
               {
@@ -221,7 +220,7 @@ console.log(validityYear);
               },
               ]}
               hasFeedback >
-            <Input.Password  />
+            <Input.Password />
           </Form.Item>
               </Col>
       

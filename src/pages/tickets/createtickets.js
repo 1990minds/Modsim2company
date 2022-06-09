@@ -135,7 +135,7 @@ console.log(user);
         </Button>
         </Tooltip>
         <Drawer
-          title="Raise a ticket" placement="right" onClose={onClose} visible={visible} width={720}
+          title="Raise a Ticket" placement="right" onClose={onClose} visible={visible} width={720}
         >
           <Form layout="vertical" hideRequiredMark
            form={form}

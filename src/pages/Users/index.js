@@ -52,7 +52,7 @@ useEffect(()=>{
 
       useEffect(()=>{
 
-        axios.get(keyUri.BACKEND_URI +`/user?search=${debouncedText}`).then(({data})=>{
+        axios.get(keyUri.BACKEND_URI +`/company-user?search=${debouncedText}`).then(({data})=>{
           console.log(
             'text'
           );
@@ -91,7 +91,7 @@ useEffect(()=>{
      
       </Col>
       <Col span={3} offset={10} >
-        <Tooltip placement="top" title="Search by Phone, Email, Name">
+        <Tooltip placement="top" title="Search by User Name, Email ">
       <SearchWrap className="mx-4 " style={{borderRadius:"4px"}}>
 
 <Input value={search}  className="px-4 py-2 focus:outline-none"

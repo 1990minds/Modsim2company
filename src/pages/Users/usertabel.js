@@ -87,24 +87,12 @@ import {
       
     },
 
-    // {
-    //   title: ' User name',
-    //   dataIndex: 'user_name',
-    //   key: 'user_name',
-      
-    // },
-   
-    
     {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-      
-    },
-    {
-      title: 'Phone',
-      dataIndex: 'phone_number',
-      key: 'phone_number',
+      title: ' License Number',
+      key: 'license_number',
+      render:(item)=>{
+        return <p class="m-0 ">{item?.license?.license_number}</p>
+      }
       
     },
 
@@ -114,6 +102,24 @@ import {
       key: 'department',
       
     },
+
+    {
+      title: 'Phone',
+      dataIndex: 'phone_number',
+      key: 'phone_number',
+      
+    },
+
+   
+   
+    
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+      
+    },
+  
         
         {
           title: 'Action',
@@ -193,7 +199,7 @@ import {
         </div>
        
                    <Drawer
-          title="Update a existing user" placement="right" onClose={onClose} visible={visible} width={720}
+          title="Update a Existing User" placement="right" onClose={onClose} visible={visible} width={720}
         >
           <Edituser current_user={current_user} cancel={onClose}/>
         </Drawer>

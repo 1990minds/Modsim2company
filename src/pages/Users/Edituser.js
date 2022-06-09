@@ -8,7 +8,7 @@ import {updateUser, fetchOneUser, userSelector} from '../../api/user'
 import { UploadOutlined } from '@ant-design/icons';
 import {authenticateSelector} from '../../api/authSlice'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { fetchAllcompanyLicense, fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
+import { fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
 import moment from 'moment';
 import {FaUserAlt, FaLock} from 'react-icons/fa'
 

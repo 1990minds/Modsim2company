@@ -7,7 +7,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import {createuser} from '../../api/user'
 import {authenticateSelector} from '../../api/authSlice';
 
-import { fetchAllcompanyLicense, fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
+import { fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
 
 const { Option } = Select;
 

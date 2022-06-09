@@ -27,7 +27,7 @@ import {
   Switch,
   Card,
 } from "antd";
-
+import { authenticateSelector} from '../../api/authSlice'
 import {
   CalendarFilled,
   SearchOutlined,
@@ -35,7 +35,7 @@ import {
   TwitterOutlined,
   FacebookFilled,
 } from "@ant-design/icons";
-
+import { useSelector} from 'react-redux'
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
@@ -169,6 +169,8 @@ const data = [
   },
 ];
 
+
+
 const menu = (
   <List
     min-width="100%"
@@ -272,7 +274,8 @@ function Header({
   const dispatch = useDispatch()
   const showDrawer = () => setVisible(true);
   const hideDrawer = () => setVisible(false);
-
+  const {user} = useSelector(authenticateSelector)
+  console.log(user);
   return (
     <>
       <div className="setting-drwer" onClick={showDrawer}>
@@ -418,6 +421,17 @@ function Header({
               </div>
             </div>
           </Drawer> */}
+
+<div style={{ paddingLeft: '20px', paddingRight: '20px'}}>
+            <Link to='/auth/userprofile'>
+          <Badge size="small">
+          {/* <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/> */}
+          <Avatar style={{ color: '#fff', backgroundColor: '#1890FF', boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.20)" }}>
+          {user?.company_name.charAt(0).toUpperCase()}
+            </Avatar>
+          </Badge>
+          </Link>
+         </div>
           
           <Link to="/sign-in" className="btn-sign-in" onClick={()=>{  dispatch(logOut()) }} type="link" danger>
             {/* {profile} */}
@@ -425,18 +439,12 @@ function Header({
           </Link>
           
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <div style={{ paddingLeft: '20px', paddingRight: '20px'}}>
-            <Link to='/auth/userprofile'>
-          <Badge size="small">
-          <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/>
-          </Badge>
-          </Link>
-         </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          <Badge size="small">
+       
+         
+          {/* <Badge size="small">
           <CalendarFilled />
         
-          </Badge>
+          </Badge> */}
           {/* <Input
             className="header-search"
             placeholder="Type here..."

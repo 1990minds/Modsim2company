@@ -85,11 +85,11 @@ import {
        
       }, 
           
-        {
-          title: 'Target',
-          dataIndex: 'target',
-          key: 'target',
-        },
+        // {
+        //   title: 'Target',
+        //   dataIndex: 'target',
+        //   key: 'target',
+        // },
         {
           title: 'Description',
           dataIndex: 'description',

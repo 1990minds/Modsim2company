@@ -44,15 +44,9 @@ console.log(all_user);
 console.log("testing");
 
 
-
-useEffect(()=>{
-
-  dispatch(fetchAllCompanyUser(user?._id))
-}, [user])
-
       useEffect(()=>{
 
-        axios.get(keyUri.BACKEND_URI +`/company-user?search=${debouncedText}`).then(({data})=>{
+        axios.get(keyUri.BACKEND_URI +`/company-user/${user?._id}?search=${debouncedText}`).then(({data})=>{
           console.log(
             'text'
           );
@@ -66,9 +60,11 @@ useEffect(()=>{
     
     console.log(filter);
 
+    useEffect(()=>{
+      dispatch(fetchAllCompanyUser(user?._id))
+    },[user])
     
    
-
     useEffect(()=>{     
       if(filter?.length < 1) {
         setSearch('')

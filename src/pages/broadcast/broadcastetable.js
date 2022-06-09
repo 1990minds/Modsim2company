@@ -21,6 +21,7 @@ import {
   import pencil from "../../assets/images/pencil.svg";
   import {useDispatch} from 'react-redux'
   import {deletebroadcast} from '../../api/broadcast'
+  import moment from 'moment';
 
   
   function BroadcasteTable({data}) {
@@ -84,12 +85,18 @@ import {
         key: 'title',
        
       }, 
-          
-        // {
-        //   title: 'Target',
-        //   dataIndex: 'target',
-        //   key: 'target',
-        // },
+         
+
+        {
+          title: 'Date',
+          dataIndex: 'createdAt',
+          key: 'createdAt',
+          width: 200,
+          render:(createdAt)=>{
+            return <small className="my-0 mr-3">{moment(createdAt).format('DD/MM/YYYY')}</small>
+        }
+        },
+
         {
           title: 'Description',
           dataIndex: 'description',

@@ -433,10 +433,10 @@ function Header({
           </Link>
          </div>
           
-          <Link to="/sign-in" className="btn-sign-in" onClick={()=>{  dispatch(logOut()) }} type="link" danger>
+          <a className="btn-sign-in" onClick={()=>{  dispatch(logOut()) }} >
             {/* {profile} */}
             <span>Sign Out</span>
-          </Link>
+          </a>
           
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        

@@ -141,7 +141,7 @@ console.log(validityYear);
               <Col span={12}>
                 <Form.Item
                   name="full_name"
-                  label="Full name"
+                  label="User name"
                   rules={[{ required: true, message: 'Please enter Full name' }]}
                 >
                   <Input />
@@ -160,12 +160,11 @@ console.log(validityYear);
                  
                 </Form.Item>
               </Col>
-            </Row>
+        
 
-            <Divider />
 
-            <Row gutter={16}>
-              <Col span={20}>
+        
+              <Col span={12}>
                 <Form.Item
                   type="phone_number"
                   name="phone_number"
@@ -179,7 +178,7 @@ console.log(validityYear);
             </Row>
 
             <Row gutter={16}>
-              <Col span={20}>
+              <Col span={12}>
                 <Form.Item
                   type="email"
                   name="email"
@@ -190,9 +189,9 @@ console.log(validityYear);
                 </Form.Item>
               </Col>
               
-            </Row>
+           
 
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
               <Col span={20}>
                 <Form.Item
                   type="user_name"
@@ -204,12 +203,12 @@ console.log(validityYear);
                 </Form.Item>
               </Col>
               
-            </Row>
+            </Row> */}
 
-<Row gutter={16}>
-<Col span={10}>
+
+<Col span={12}>
 <Form.Item
-            label={<p >Update Password</p>}
+            label="Update Password"
             name="password"
             rules={[
               {
@@ -221,7 +220,7 @@ console.log(validityYear);
               },
               ]}
               hasFeedback >
-            <Input.Password  />
+            <Input.Password />
           </Form.Item>
               </Col>
       

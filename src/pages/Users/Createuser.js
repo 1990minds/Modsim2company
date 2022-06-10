@@ -60,6 +60,8 @@ export default function Createuser({cancel}) {
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
+    setVisible(true);
+    
   };
 
   const [form] = Form.useForm();
@@ -84,6 +86,7 @@ const showDrawer = () => {
 
 const onClose = () => {
   setVisible(false);
+  form.resetFields()
 };
 
 

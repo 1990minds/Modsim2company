@@ -98,6 +98,7 @@ const onClose = () => {
         <Drawer
           title="Create a New User" placement="right" onClose={onClose} visible={visible} width={720}
         >
+          <DataWrap>
           <Form layout="vertical" hideRequiredMark
            form={form}
            name="basic"
@@ -252,8 +253,25 @@ block style={{ fontSize: '14px' }}>
       Submit
     </Button>
           </Form>
+</DataWrap>
         </Drawer>
       </>
     );
   }
+
+  const DataWrap = styled.div`
+  
+
+.ant-input-password{
+  border-radius: 6px;
+}
+
+#basic_email{
+  height: 2.8rem;
+}
+.ant-select-selector{
+  height: 2.6rem !important;
+  border-radius: 6px !important;
+}
+`
 

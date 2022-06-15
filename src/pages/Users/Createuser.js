@@ -47,7 +47,8 @@ export default function Createuser({cancel}) {
          user_name:values.user_name,
          full_name:values.full_name,
          company_id:user?._id,
-         newpassword:values.password
+         newpassword:values.password,
+         
          
       }
 
@@ -138,7 +139,7 @@ const onClose = () => {
                 <Form.Item
                   name="full_name"
                   label="User name"
-                  rules={[{ required: true, message: 'Please enter Full name' }]}
+                  rules={[{ required: true, message: 'Please enter User name' }]}
                 >
                   <Input />
                 </Form.Item>

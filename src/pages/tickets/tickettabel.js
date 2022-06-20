@@ -12,7 +12,7 @@ import {
   import moment from "moment";
 
   
-  function Tables({data}) {
+  function Tables({data, loading}) {
 
   const Search = Input.Search; 
   const [visibleLicense, setVisibleModal] = useState(false);
@@ -134,6 +134,7 @@ import {
               >
                 <div className="table-responsive">
                   <Table
+                  loading={loading}
                     columns={columns}
                     dataSource={data}
                     pagination={{

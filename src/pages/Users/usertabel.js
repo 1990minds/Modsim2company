@@ -24,7 +24,7 @@ import {
   import {deleteUser} from '../../api/user'
 
   
-  function UserTable({data}) {
+  function UserTable({data, loading}) {
 
     
     const [visibleEdit, setEditModal] = useState(false);
@@ -104,7 +104,7 @@ import {
     },
 
     {
-      title: 'Phone',
+      title: 'Phone Number',
       dataIndex: 'phone_number',
       key: 'phone_number',
       
@@ -183,6 +183,7 @@ import {
               >
                 <div className="table-responsive">
                   <Table
+                  loading={loading} 
                   pagination={{
                     onChange(current) {
                       setPage(current)

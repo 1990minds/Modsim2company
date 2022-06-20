@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useLayoutEffect} from 'react'
 import Layout  from '../../components/layout/Main'
 import BroadcastTabel from './broadcastetable'
-import { Tabs, Button, Input,Upload, Card } from 'antd';
+ import { Tabs, Button, Input,Upload, Card,Tooltip } from 'antd';
 import {fetchAllbroadcastCustomers,broadcastSelector} from '../../api/broadcast'
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
@@ -77,19 +77,21 @@ console.log(filter);
 
       </Col>
       <Col span={3} offset={10} >
+      <Tooltip placement="top" title="Search by Title">
       <SearchWrap className="mx-4 " style={{borderRadius:"20px"}}>
       <Input value={search}  className="px-4 py-2 focus:outline-none"
         prefix ={  <SearchOutlined  style={{color:'#3e79f7', fontWeight:'bold'}} />
         }
         placeholder="Search" onChange={onSearch}  />
         </SearchWrap>
+        </Tooltip>
         </Col>
         <Col span={3} className='' style={{ display: 'flex', justifyContent: 'end' }}>
         {/* <ExcelBtn data={all_broadcast}  /> */}
       </Col>
       </Row>
 
-        <BroadcastTabel data={(filter?.length > 0) ? filter :all_broadcast} />
+        <BroadcastTabel data={(filter?.length > 0) ? filter :all_broadcast} loading={loading} />
         
     </Layout>
   )

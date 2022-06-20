@@ -104,7 +104,7 @@ placeholder="Search" onChange={onSearch}  />
       </Col>
       </Row>
 
-        <UserTables data={(filter?.length > 0) ? filter :all_user} />
+        <UserTables data={(filter?.length > 0) ? filter :all_user} loading={loading} />
         
     </Layout>
   )

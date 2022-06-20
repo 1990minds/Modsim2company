@@ -24,7 +24,7 @@ import {
   import moment from 'moment';
 
   
-  function BroadcasteTable({data}) {
+  function BroadcasteTable({data,loading}) {
 
     
     const [visibleEdit, setEditModal] = useState(false);
@@ -139,6 +139,7 @@ import {
               >
                 <div className="table-responsive">
                   <Table
+                  loading={loading}
                   pagination={{
                     onChange(current) {
                       setPage(current)

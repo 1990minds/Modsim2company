@@ -47,7 +47,8 @@ export default function Createuser({cancel}) {
          user_name:values.user_name,
          full_name:values.full_name,
          company_id:user?._id,
-         newpassword:values.password
+         newpassword:values.password,
+         
          
       }
 
@@ -142,7 +143,7 @@ const onClose = () => {
                 <Form.Item
                   name="full_name"
                   label="User name"
-                  rules={[{ required: true, message: 'Please enter Full name' }]}
+                  rules={[{ required: true, message: 'Please enter User name' }]}
                 >
                   <Input />
                 </Form.Item>
@@ -169,7 +170,11 @@ const onClose = () => {
                   type="phone_number"
                   name="phone_number"
                   label="Phone Number"
-                  rules={[{ required: true, message: 'Please enter Phone Number' }]}
+                  rules={[{ required: true ,message: 'required!' },
+                  {min: 10},
+                  {max:10},
+                  {pattern:"[0-9]", message:"Only Numbers"}
+                  ]}
                 >
                   <Input  />
                 </Form.Item>
@@ -183,7 +188,14 @@ const onClose = () => {
                   type="email"
                   name="email"
                   label="Email"
-                  rules={[{ required: true, message: 'Please enter Email' }]}
+                  rules={[{
+                    type: 'email',
+                    message: 'The input is not valid E-mail!',
+                  },
+                  {
+                    required: true,
+                    message: 'Please input your E-mail!',
+                  },]}
                 >
                   <Input  />
                 </Form.Item>

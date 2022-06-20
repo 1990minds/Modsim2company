@@ -20,7 +20,7 @@ const layout = {
  
   
   
-export default function EditUser({current_user,}) {
+export default function EditUser({cancel, current_user,}) {
     
     const [loading, setLoading] = useState(false)
 
@@ -64,18 +64,19 @@ export default function EditUser({current_user,}) {
 
             license_number:values.license_number,
             phone_number:values.phone_number,
-            email:values.email,
+            email:values.email.toLowerCase(),
              department:values.department,
              user_name:values.user_name,
              full_name:values.full_name,
              company:user?._id,
-             password:values.password
+             password:values.password,
+             newpassword:values.password
              
           }
         
       
    dispatch(updateUser(current_user?._id, userdata,user?._id))
-   form.resetFields()
+   cancel()
   
   };
 
@@ -124,7 +125,7 @@ console.log(validityYear);
            initialValues={{ remember: false }}
            onFinish={onFinish}
            onFinishFailed={onFinishFailed}
-           autoComplete={false}
+           
           >
             <Row gutter={16}>
               <Col span={12}>
@@ -142,7 +143,7 @@ console.log(validityYear);
                 <Form.Item
                   name="full_name"
                   label="User name"
-                  rules={[{ required: true, message: 'Please enter Full name' }]}
+                  rules={[{ required: true, message: 'Please enter User name' }]}
                 >
                   <Input />
                 </Form.Item>
@@ -169,7 +170,11 @@ console.log(validityYear);
                   type="phone_number"
                   name="phone_number"
                   label="Phone Number"
-                  rules={[{ required: true, message: 'Please enter Phone Number' }]}
+                  rules={[{ required: true ,message: 'required!' },
+                  {min: 10},
+                  {max:10},
+                  {pattern:"[0-9]", message:"Only Numbers"}
+                  ]}
                 >
                   <Input  />
                 </Form.Item>
@@ -183,7 +188,14 @@ console.log(validityYear);
                   type="email"
                   name="email"
                   label="Email"
-                  rules={[{ required: true, message: 'Please enter Email' }]}
+                  rules={[{
+                    type: 'email',
+                    message: 'The input is not valid E-mail!',
+                  },
+                  {
+                    required: true,
+                    message: 'Please input your E-mail!',
+                  },]}
                 >
                   <Input  />
                 </Form.Item>

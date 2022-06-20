@@ -167,7 +167,11 @@ const onClose = () => {
                   type="phone_number"
                   name="phone_number"
                   label="Phone Number"
-                  rules={[{ required: true, message: 'Please enter Phone Number' }]}
+                  rules={[{ required: true ,message: 'required!' },
+                  {min: 10},
+                  {max:10},
+                  {pattern:"[0-9]", message:"Only Numbers"}
+                  ]}
                 >
                   <Input  />
                 </Form.Item>
@@ -181,7 +185,14 @@ const onClose = () => {
                   type="email"
                   name="email"
                   label="Email"
-                  rules={[{ required: true, message: 'Please enter Email' }]}
+                  rules={[{
+                    type: 'email',
+                    message: 'The input is not valid E-mail!',
+                  },
+                  {
+                    required: true,
+                    message: 'Please input your E-mail!',
+                  },]}
                 >
                   <Input  />
                 </Form.Item>

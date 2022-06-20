@@ -94,7 +94,7 @@ useEffect(()=>{
       </Row>
 
         {/* <PartsTabel data={(filter?.length > 0) ? filter :all_parts} />  */}
-        < Tickettabel data={(filter?.length > 0) ? filter :all_tickets} />
+        < Tickettabel data={(filter?.length > 0) ? filter :all_tickets} loading={loading} />
     </Layout>
   )
         

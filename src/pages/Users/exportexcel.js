@@ -40,7 +40,7 @@ export default function ExportExcel({data}) {
             <ExcelColumn label="department" value={col => col?.department ? col.department: "null"}/> 
             <ExcelColumn label="email" value={col => col?.email ? col.email: "null"}/> 
             <ExcelColumn label="full_name" value={col => col?.full_name ? col.full_name: "null"}/> 
-            <ExcelColumn label="license_number" value={col => col?.license_number ? col.license_number: "null"}/> 
+            <ExcelColumn label="license_number" value={col => col?.license?.license_number ? col.license?.license_number: "null"}/> 
             
         </ExcelSheet>
     </ExcelFile>

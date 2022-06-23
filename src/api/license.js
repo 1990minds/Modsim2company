@@ -88,7 +88,9 @@ export const fetchAllcompanyLicense = (id) => async dispatch => {
 
  export const fetchAllcompanyactiveLicense = (id) => async dispatch => {
   dispatch(getlicense())
- 
+console.log({id})
+
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-license-active/${id}`)

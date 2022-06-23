@@ -411,9 +411,9 @@ c-0.01-0.42-0.32-0.5-0.66-0.51C49.71,15.18,49.14,15.19,48.56,15.19z"fill={color}
           </NavLink>
         </Menu.Item>
 
-        <Menu.Item className="menu-item-header" key="5">
+        {/* <Menu.Item className="menu-item-header" key="5">
           Support
-        </Menu.Item>
+        </Menu.Item> */}
 
         <Menu.Item key="6">
           <NavLink to="/auth/broadcast">

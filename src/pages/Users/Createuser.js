@@ -22,7 +22,7 @@ export default function Createuser({cancel}) {
     const [loading, setLoading] = useState(false)
     const { user } = useSelector(authenticateSelector) 
     console.log(user);
-    const { all_active_license} = useSelector(licenseSelector) 
+    const {all_active_license} = useSelector(licenseSelector) 
 
 
   console.log({all_active_license});
@@ -31,13 +31,13 @@ export default function Createuser({cancel}) {
       console.log({K:user});
       
       useEffect(()=>{
-
+console.log("sdfgdsgsghsfh")
            dispatch(fetchAllcompanyactiveLicense(user?._id))
            
       }, [user])
         
   
-  const onFinish = (values) => {
+  const onFinish = (id ,values) => {
   console.log(values);
       const data = {
         license_number:values.license_number,

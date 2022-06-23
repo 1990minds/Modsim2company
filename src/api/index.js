@@ -5,6 +5,10 @@ import userReducer from './user'
 import companyReducer from './company'
 import ticketsReducer from './tickets';
 import broadcastReducer from './broadcast';
+import customersReducer from './customers';
+import projectReducer from './project';
+import panelReducer from './panel';
+
 
 
 export default configureStore({
@@ -16,5 +20,8 @@ export default configureStore({
      tickets:ticketsReducer,
      company:companyReducer,
      broadcast:broadcastReducer,
+     customers:customersReducer,
+     project:projectReducer,
+     panel:panelReducer,
   },
 });

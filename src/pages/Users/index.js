@@ -61,6 +61,8 @@ console.log("testing");
     console.log(filter);
 
     useEffect(()=>{
+      console.log('tttttttt');
+      console.log({user});
       dispatch(fetchAllCompanyUser(user?._id))
     },[user])
     

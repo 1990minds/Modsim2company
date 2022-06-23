@@ -24,6 +24,8 @@ import Paragraph from "antd/lib/typography/Paragraph";
 import Echart from "../../components/chart/EChart";
 import LineChart from "../../components/chart/LineChart";
 import {fetchAllcompanycustomers,customersSelector} from '../../api/customers'
+import {fetchAllcompanyProject,projectSelector} from '../../api/project'
+import {fetchAllpanel,panelSelector} from '../../api/panel'
 import {useEffect,  useLayoutEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
@@ -32,20 +34,41 @@ import {authenticateSelector} from '../../api/authSlice'
 
 
 function Home() {
+
+
+  
+  const { all_customers} = useSelector(customersSelector)
+  const { user} = useSelector(authenticateSelector)
+  const {all_project} = useSelector(projectSelector) 
+  const {all_panel} = useSelector(panelSelector) 
+  
+  // const {all_tickets}=useSelector(ticketsSelector)
+  // const {all_panel}=useSelector(panelSelector)
+
+
+console.log(all_project)
+
+
   const { Title, Text } = Typography;
 
   const dispatch = useDispatch()
 
   const onChange = (e) => console.log(`radio checked:${e.target.value}`);
-  const { user } = useSelector(authenticateSelector) 
+  
   const [reverse, setReverse] = useState(false);
 
 
+
+  console.log(user?._id)
+
   useEffect(()=>{
+
+console.log()
+
     dispatch(fetchAllcompanycustomers(user?._id))
-    // dispatch(fetchAllcompanyProject(user?.company?._id)) 
+    dispatch(fetchAllcompanyProject(user?._id)) 
     // dispatch(fetchAllUserTickets(user?._id)) 
-    // dispatch(fetchAllpanel(user?.company?._id)) 
+    dispatch(fetchAllpanel(user?._id)) 
  }, [user])
 
 
@@ -152,24 +175,26 @@ function Home() {
     },
     {
       today: "Total Projects",
-      title: "3,200",
+      title: [all_project?.length],
       // persent: "+20%",
       icon: profile,
       bnb: "bnb2",
     },
     {
       today: "Total Panels",
-      title: "1,200",
+      title: [all_panel?.length],
       // persent: "-20%",
       icon: heart,
       bnb: "redtext",
+      link: '/auth/panel'
     },
     {
       today: "Total Customers",
-      title: "13",
+      title: [all_customers?.length],
       // persent: "10%",
       icon: cart,
       bnb: "bnb2",
+      link: '/auth/customers'
     },
   ];
 

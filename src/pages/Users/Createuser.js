@@ -37,8 +37,9 @@ console.log("sdfgdsgsghsfh")
       }, [user])
         
   
-  const onFinish = (id ,values) => {
+  const onFinish = (values) => {
   console.log(values);
+
       const data = {
         license_number:values.license_number,
         phone_number:values.phone_number,

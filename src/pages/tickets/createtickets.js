@@ -113,6 +113,7 @@ console.log(user);
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
+    setVisible(true);
   };
 
   const [form] = Form.useForm();

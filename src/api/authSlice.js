@@ -108,7 +108,7 @@ export const logOut = () => async dispatch =>{
 export const fetchlogin = (logindata) => async dispatch =>{
     const key = 'login';
     dispatch(getlogin())
-    message.loading({ content: 'loading...', key })
+    message.loading({ content: 'Loading...', key })
 
     try {
         

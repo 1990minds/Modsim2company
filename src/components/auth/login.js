@@ -6,7 +6,7 @@ import {FaUserAlt, FaLock} from 'react-icons/fa'
 import {fetchlogin, authenticateSelector} from '../../api/authSlice'
 import {useDispatch, useSelector} from 'react-redux'
 import styled from 'styled-components'
-import Logo from '../../images/MODSIM.png'
+import Logo from '../../images/MODSIMbeta.png'
 import Banner from '../../images/perspective_matte.jpg'
 import './auth.css'
 // const tailLayout = {

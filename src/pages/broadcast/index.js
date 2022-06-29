@@ -16,13 +16,16 @@ import { Row, Col } from 'antd';
 import './index.css'
 const { Search } = Input;
 
-  export default function Database() {
+   export default function Database() {
 
     
     const dispatch = useDispatch()
-    const {all_broadcast} = useSelector(broadcastSelector) 
+    const {all_broadcast, loading:load} = useSelector(broadcastSelector) 
     const { broadcast } = useSelector(authenticateSelector) 
     const [broadcastAddVisible, SetBroadcastAddVisible] = useState(false)
+    const { user } = useSelector(authenticateSelector) 
+
+console.log(user)
 
 
     const [search, setSearch] = useState('')
@@ -32,8 +35,6 @@ const { Search } = Input;
     
 
     console.log(all_broadcast);
-
-  // console.log(all_broadcast);
 
   
 
@@ -53,8 +54,8 @@ const { Search } = Input;
 console.log(filter);
 
   useEffect(()=>{
-    dispatch(fetchAllbroadcastCustomers())
-        }, [dispatch])
+    dispatch(fetchAllbroadcastCustomers(user?._id))
+        }, [user])
 
         useEffect(()=>{     
           if(filter?.length < 1) {
@@ -91,7 +92,7 @@ console.log(filter);
       </Col>
       </Row>
 
-        <BroadcastTabel data={(filter?.length > 0) ? filter :all_broadcast} loading={loading} />
+        <BroadcastTabel data={(filter?.length > 0) ? filter :all_broadcast} loading={loading || load} />
         
     </Layout>
   )

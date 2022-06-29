@@ -73,6 +73,7 @@ import {
     {
       title: ' SI NO.',
       dataIndex: 'si_no',
+      width: 100,
       key: 'si_no',
       render:(t, k, i)=>{
         return <p class="m-0 ">{(page - 1) * 10 + (i+1)}</p>
@@ -84,7 +85,8 @@ import {
       title: ' User name',
       dataIndex: 'full_name',
       key: 'full_name',
-      
+      ellipsis: true,
+
     },
 
     {

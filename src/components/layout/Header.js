@@ -281,18 +281,18 @@ function Header({
       <div className="setting-drwer" onClick={showDrawer}>
         {setting}
       </div>
-      <Row gutter={[24, 0]}>
-        <Col span={24} md={6}>
-          <Breadcrumb>
+            <Row gutter={[24, 0]}>
+            <Col span={24} md={6}>
+            <Breadcrumb>
             <Breadcrumb.Item>
-              <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
             </Breadcrumb.Item>
             <Breadcrumb.Item style={{ textTransform: "capitalize" }}>
               {/* {name.replace("/", "")} */}
               {LastWord(name.split('-').join(' ')) }
             </Breadcrumb.Item>
-          </Breadcrumb>
-          <div className="ant-page-header-heading">
+            </Breadcrumb>
+            <div className="ant-page-header-heading">
             <span
               className="ant-page-header-heading-title"
               style={{ textTransform: "capitalize" , fontSize: "24px" , paddingTop: '10px', paddingBottom: '10px'}}
@@ -300,21 +300,21 @@ function Header({
               {/* {subName.replace("/", "")} */}
               {LastWord(name.split('-').join(' ')) }
             </span>
-          </div>
-        </Col>
-        <Col span={24} md={18} className="header-control">
+            </div>
+            </Col>
+            <Col span={24} md={18} className="header-control">
           
 
-<div style={{ paddingLeft: '20px', paddingRight: '20px'}}>
+            <div style={{ paddingLeft: '20px', paddingRight: '20px'}}>
             <Link to='/auth/userprofile'>
-          <Badge size="small">
-          {/* <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/> */}
-          <Avatar style={{ color: '#fff', backgroundColor: '#1890FF', boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.20)" }}>
-          {user?.company_name.charAt(0).toUpperCase()}
+            <Badge size="small">
+            {/* <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/> */}
+            <Avatar style={{ color: '#fff', backgroundColor: '#1890FF', boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.20)" }}>
+            {user?.company_name.charAt(0).toUpperCase()}
             </Avatar>
-          </Badge>
-          </Link>
-         </div>
+            </Badge>
+            </Link>
+            </div>
           
           <a className="btn-sign-in" onClick={()=>{  dispatch(logOut()) }} >
             {/* {profile} */}

@@ -22,7 +22,7 @@ const { Search } = Input;
     
     const {id}= useParams()
     const dispatch=useDispatch()    
-    const {all_tickets}=useSelector(ticketsSelector)
+    const {all_tickets, loading:load}=useSelector(ticketsSelector)
     const {current_company,loader}=useSelector(companySelector)
     const { user } = useSelector(authenticateSelector) 
     
@@ -42,8 +42,6 @@ const { Search } = Input;
 
     axios.get(keyUri.BACKEND_URI +`/companytickets/${user?._id}?search=${debouncedText}`).then(({data})=>{
  
-
-
       setFilter(data?.filtertickets)
        })
   setLoading(false)
@@ -94,7 +92,7 @@ useEffect(()=>{
       </Row>
 
         {/* <PartsTabel data={(filter?.length > 0) ? filter :all_parts} />  */}
-        < Tickettabel data={(filter?.length > 0) ? filter :all_tickets} loading={loading} />
+        < Tickettabel data={(filter?.length > 0) ? filter :all_tickets} loading={loading || load} />
     </Layout>
   )
         

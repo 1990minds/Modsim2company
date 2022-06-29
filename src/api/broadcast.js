@@ -66,12 +66,13 @@ export const broadcastSelector = state => state.broadcast;
 //  };
 
 
- export const fetchAllbroadcastCustomers = () => async dispatch => {
+ export const fetchAllbroadcastCustomers = (id) => async dispatch => {
   dispatch(getbroadcast())
  
+  console.log({id});
   try {
  
-   const {data} = await axios.get(keyUri.BACKEND_URI +`/broadcast-customers`)
+   const {data} = await axios.get(keyUri.BACKEND_URI +`/broadcast-customers/${id}`)
    console.log(data);
    
    dispatch(getAll_broadcast_success(data));

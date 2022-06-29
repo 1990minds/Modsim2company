@@ -66,10 +66,10 @@ const onFinishFailed = (errorInfo) => {
           
           >
         <Form.Item
-                  name="remark"
-                  label="Company Name"
-                  rules={[{ required: true, message: 'Please enter Company name' }]}
-                >
+        name="remark"
+        label="Company Name"
+        rules={[{ required: true, message: 'Please enter Company name' }]}
+        >
                   <TextArea rows={4} />
             </Form.Item>
 

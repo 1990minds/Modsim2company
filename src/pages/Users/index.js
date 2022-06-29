@@ -21,7 +21,7 @@ const { Search } = Input;
 export default function User() {
 
   const dispatch = useDispatch()
-  const { all_user} = useSelector(userSelector) 
+  const { all_user,loading:load} = useSelector(userSelector) 
   const { user } = useSelector(authenticateSelector) 
   
   // const { user } = useSelector(authenticateSelector) 
@@ -106,7 +106,7 @@ placeholder="Search" onChange={onSearch}  />
       </Col>
       </Row>
 
-        <UserTables data={(filter?.length > 0) ? filter :all_user} loading={loading} />
+        <UserTables data={(filter?.length > 0) ? filter :all_user} loading={loading || load} />
         
     </Layout>
   )

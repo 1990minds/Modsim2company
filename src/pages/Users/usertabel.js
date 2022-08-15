@@ -119,6 +119,7 @@ import {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
+      ellipsis: true,
       
     },
   
@@ -185,9 +186,10 @@ import {
               >
                 <div className="table-responsive">
                   <Table
+                  scroll={{ x: true }}
                   loading={loading} 
                   pagination={{
-                    onChange(current) {
+                      onChange(current) {
                       setPage(current)
                     }
                   }}

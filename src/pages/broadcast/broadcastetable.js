@@ -101,6 +101,7 @@ import {
           title: 'Description',
           dataIndex: 'description',
           key: 'description',
+          ellipsis: true,
         },
       ];
  
@@ -139,6 +140,7 @@ import {
               >
                 <div className="table-responsive">
                   <Table
+                  scroll={{ x: true }}
                   loading={loading}
                   pagination={{
                     onChange(current) {

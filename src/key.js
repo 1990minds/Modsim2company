@@ -2,7 +2,7 @@
 
 const  keyUri = {
 
-    BACKEND_URI:'https://my-app-5gv32.ondigitalocean.app/api'
+    BACKEND_URI:' https://my-app-5gv32.ondigitalocean.app/api'
 
     // BACKEND_URI:'http://localhost:5000/api'
 }

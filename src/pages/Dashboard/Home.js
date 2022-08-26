@@ -453,7 +453,7 @@ console.log()
           ))}
         </Row>
 
-               <Row gutter={[24, 0]}>
+               {/* <Row gutter={[24, 0]}>
                <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
                <Card bordered={false} className="criclebox h-full">
                <Echart/>
@@ -464,7 +464,7 @@ console.log()
                <LineChart />
                </Card>
                </Col>
-               </Row>
+               </Row> */}
 
                </div>
                </>

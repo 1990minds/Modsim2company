@@ -53,10 +53,9 @@ console.log(user)
 
 console.log(filter);
 
-  useEffect(()=>{
+    useEffect(()=>{
     dispatch(fetchAllbroadcastCustomers(user?._id))
         }, [user])
-
         useEffect(()=>{     
           if(filter?.length < 1) {
             setSearch('')

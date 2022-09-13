@@ -60,7 +60,7 @@ export const fetchAllCompany = () => async dispatch => {
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company`)
-   console.log(data);
+   
    
    dispatch(getAll_company_success(data));
     
@@ -71,14 +71,7 @@ export const fetchAllCompany = () => async dispatch => {
   }
  };
 
-//  const useFetchList =(resource)=>{
-//   const getPosts = async () => {
-//     const { data } = await axios.get(key.BACK_ENDURL + `/${resource}`, config);
-    
-//     return data;
-//   };
-//     return useQuery(`${resource}`, getPosts )
-// }
+
 
   
 
@@ -111,11 +104,10 @@ export const fetchAllCompany = () => async dispatch => {
  export const fetchOneCompany = (id) => async dispatch => {
 
   dispatch(getcompany())
- console.log(id);
+ 
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company/${id}`)
-  console.log(data);
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -131,14 +123,12 @@ export const fetchAllCompany = () => async dispatch => {
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/company/${id}`, values, config);
-    console.log(data);
     
     data && message.success({ content: data.msg, key, duration: 2 });
     // dispatch(fetchAllcompany())
     window.location.reload()
 
 } catch ({response}) {
-console.log(response.data);
     dispatch(get_company_Failure())
    
 

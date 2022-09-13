@@ -60,11 +60,10 @@ export const customersSelector = state => state.customers;
  
 export const fetchAllcompanycustomers = (id) => async dispatch => {
   dispatch(getcustomers())
- console.log({id});
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/companycustomers/${id}`)
-   console.log(data);
    
    dispatch(getAll_customers_success(data));
     
@@ -122,11 +121,9 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
  export const fetchOnecustomers = (id) => async dispatch => {
 
   dispatch(getcustomers())
- console.log(id);
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/customers/${id}`)
-  console.log(data);
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -142,13 +139,11 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/customers/${id}`, values, config);
-
     data && message.success({ content: data.msg, key, duration: 2 });
     dispatch(fetchAllcompanycustomers(company));
 
 
 } catch ({response}) {
-console.log(response.data);
     dispatch(get_customers_Failure())
    
 

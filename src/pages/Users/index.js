@@ -28,7 +28,7 @@ export default function User() {
 
   
  
-  console.log(all_user);
+ 
   const [search, setSearch] = useState('')
   const [ loading, setLoading] = useState(false)
   const [filter,setFilter]=useState([])
@@ -37,7 +37,7 @@ export default function User() {
 
   const [userAddVisible, SetUserAddVisible] = useState(false)
   // const [searchvalue, setSearchvalue] = useState('')
- console.log(user);
+ 
 
 console.log(all_user);
 
@@ -47,10 +47,8 @@ console.log("testing");
       useEffect(()=>{
 
         axios.get(keyUri.BACKEND_URI +`/company-user/${user?._id}?search=${debouncedText}`).then(({data})=>{
-          console.log(
-            'text'
-          );
-          console.log({data})
+         
+         
     
           setFilter(data?.filteruser)
            })
@@ -58,11 +56,10 @@ console.log("testing");
       setLoading(false)
        }, [dispatch, debouncedText])
     
-    console.log(filter);
+    
 
     useEffect(()=>{
-      console.log('tttttttt');
-      console.log({user});
+     
       dispatch(fetchAllCompanyUser(user?._id))
     },[user])
     

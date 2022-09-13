@@ -45,13 +45,10 @@ export const ticketsSelector = state => state.tickets;
 export const fetchAllCompanyTickets = (id) => async dispatch => {
     dispatch(gettickets())
    
-    console.log({id});
     try {
    
      const {data} = await axios.get(keyUri.BACKEND_URI +`/companytickets/${id}`)
   
-  
-     console.log(data);
      
      dispatch(getAll_tickets_success(data));
       

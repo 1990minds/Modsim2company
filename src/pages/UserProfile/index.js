@@ -29,7 +29,7 @@ export default function Edituser() {
     const [imgurl, setImgurl] = useState([])
     const [loading1, setLoading1] = useState(false)
     const [fileList, setFileList] = useState([])
-    console.log(user)
+ 
     
 
 
@@ -43,13 +43,13 @@ export default function Edituser() {
           return snapshot.ref.getDownloadURL();
         })
         .then(url => {
-          console.log(url);
+       
           setImgurl([...imgurl, url])
           setLoading1(false)
     
         })
         .catch(error => {
-          console.log(error);
+         
         });
     
       };

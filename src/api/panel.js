@@ -25,8 +25,6 @@ export const panelSlice = createSlice({
 
     getAll_panel_success: (state, {payload})  =>{
 
-      console.log(payload)
-
         state.loading = false
         state.all_panel = payload.panel
 
@@ -65,11 +63,9 @@ export const panelSelector = state => state.panel;
 
 export const fetchAllpanel = (id) => async dispatch => {
   dispatch(getpanel())
-  console.log(id)
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/panel/${id}`)
-   console.log(data);
    
    dispatch(getAll_panel_success(data));
     
@@ -100,8 +96,7 @@ export const fetchAllpanel = (id) => async dispatch => {
  };
 
  export const createpanel = ( values,id) => async dispatch => {
-console.log( values);
-console.log( {id});
+
 
 
   dispatch(getpanel())
@@ -123,9 +118,7 @@ console.log( {id});
  };
 
  export const duplicatepanel = (values,product) => async dispatch => {
-  console.log( values);
-  
-  
+   
     dispatch(getpanel())
     const key = 'create';
     message.loading({ content: 'loading...', key })
@@ -149,11 +142,11 @@ console.log( {id});
 
  export const fetchProductPanels = (values) => async dispatch => {
   dispatch(getpanel())
-  console.log(values);
+  
   try {
  
    const {data} = await axios.post(keyUri.BACKEND_URI +`/product-panels`, values, config)
-   console.log(data);
+  
    
    dispatch(get_product_panels_success(data));
     
@@ -166,11 +159,11 @@ console.log( {id});
 
  export const fetchAllRequestPanels = (values) => async dispatch => {
   dispatch(getpanel())
-  console.log(values);
+ 
   try {
  
    const {data} = await axios.post(keyUri.BACKEND_URI +`/request-panel`, values, config)
-   console.log(data);
+  
    
    dispatch(get_product_panels_success(data));
     
@@ -185,11 +178,10 @@ console.log( {id});
  export const fetchOnepanel = (id) => async dispatch => {
 
   dispatch(getpanel())
- console.log(id);
+ 
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/panel/${id}`)
-  console.log(data);
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -200,8 +192,7 @@ console.log( {id});
 
  export const  updatePanel = (id, values, product) => async dispatch =>{
 
-  console.log(id);
-  console.log(values);
+ 
 
   const key = "panel"
   dispatch(getpanel())
@@ -209,7 +200,7 @@ console.log( {id});
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/panel/${id}`, values, config);
-    console.log(data);
+
     
     data && message.success({ content: data.msg, key, duration: 2 });
     dispatch(fetchProductPanels(product));
@@ -218,7 +209,6 @@ try {
 
 } catch ({response}) {
 
-  console.log("error");
     dispatch(get_panel_Failure())
 
 }

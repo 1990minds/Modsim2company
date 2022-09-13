@@ -48,32 +48,16 @@ export const broadcastSlice = createSlice({
 
 export const broadcastSelector = state => state.broadcast;
 
-// export const fetchAllbroadcast = () => async dispatch => {
-//   dispatch(getbroadcast())
- 
-//   try {
- 
-//    const {data} = await axios.get(keyUri.BACKEND_URI +`/broadcast`)
-//    console.log(data);
-   
-//    dispatch(getAll_broadcast_success(data));
-    
-//   } catch (error) {
- 
-//  dispatch(get_broadcast_Failure())
 
-//   }
-//  };
 
 
  export const fetchAllbroadcastCustomers = (id) => async dispatch => {
   dispatch(getbroadcast())
  
-  console.log({id});
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/broadcast-customers/${id}`)
-   console.log(data);
+   
    
    dispatch(getAll_broadcast_success(data));
     
@@ -135,7 +119,6 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
  export const fetchOnebroadcast = (id) => async dispatch => {
 
   dispatch(getbroadcast())
- console.log(id);
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/broadcast/${id}`)
@@ -162,40 +145,12 @@ try {
     window.location.reload()
 
 } catch ({response}) {
-console.log(response.data);
     dispatch(get_broadcast_Failure())
    
 
 }
 }
 
-// export const deleteManyCompany = (values) => async dispatch =>{
-
-//   console.log(values);
-//   const key = 'delete';
-//   dispatch(getcompany())
-//   message.loading({ content: 'loading...', key })
-
-//   try {
-      
-//       const {data} = await axios.post(keyUri + `/delete-company`, values, config )
-  
-//       data &&  message.success({ content: data.msg, key, duration: 2 });
-
-//       dispatch(fetchAllCompany())
-
-//   } catch (error) {
-
-// dispatch(get_company_Failure())
-// setTimeout(() => {
-
-//   message.error({ content: error.response.data.msg, key, duration: 2 });
-// }, 100) 
-
-      
-//   }
-
-// }
 
 
 

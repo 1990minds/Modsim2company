@@ -10,16 +10,7 @@ import {
     Drawer,
   } from "antd";
   import { useState } from "react";
-  import { ToTopOutlined } from "@ant-design/icons";
-  import { Link } from "react-router-dom";
   import Edituser from './Edituser';
-  import { PlusOutlined } from '@ant-design/icons';
-  import DeleteConfirm from '../../global/delete'
-//   import Createcustomer from "./createcustomer";
-  import { FileAddOutlined  } from '@ant-design/icons'
-  // Images
-  import face6 from "../../assets/images/face-6.jpeg";
-  import pencil from "../../assets/images/pencil.svg";
   import {useDispatch} from 'react-redux'
   import {deleteUser} from '../../api/user'
 
@@ -54,7 +45,7 @@ import {
   const dispatch = useDispatch()
 
   const confirm = (e, id) => {
-    console.log(id.company._id)
+   
     dispatch(deleteUser(id._id,id, id?.company?._id))
    
   }
@@ -141,11 +132,7 @@ import {
           <h5 className="text-danger">
 
          
-              {/* <DeleteConfirm confirm={(e)=>confirm(e, id)} title="user" cancel={cancel} >
- <Tooltip placement="top" title="Delete User">
-                  <FaRegTrashAlt style={{cursor:"pointer", color: "#1890FF"}}  />
-</Tooltip>
-              </DeleteConfirm> */}
+    
               
 
           </h5>

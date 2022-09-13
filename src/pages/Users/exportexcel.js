@@ -20,7 +20,7 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 
 export default function ExportExcel({data}) {
-    console.log(data);
+   
 
  
     return (

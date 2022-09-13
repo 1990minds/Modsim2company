@@ -21,14 +21,14 @@ export default function Createuser({cancel}) {
   
     const [loading, setLoading] = useState(false)
     const { user } = useSelector(authenticateSelector) 
-    console.log(user);
+    
     const {all_active_license} = useSelector(licenseSelector) 
 
 
-  console.log({all_active_license});
+ 
 
       const dispatch = useDispatch();
-      console.log({K:user});
+      
       
       useEffect(()=>{
 console.log("sdfgdsgsghsfh")
@@ -38,7 +38,7 @@ console.log("sdfgdsgsghsfh")
         
   
   const onFinish = (values) => {
-  console.log(values);
+ 
 
       const data = {
         license_number:values.license_number,
@@ -204,19 +204,7 @@ const onClose = () => {
               
             </Row>
 
-            {/* <Row gutter={16}>
-              <Col span={20}>
-                <Form.Item
-                  type="user_name"
-                  name="user_name"
-                  label="User name"
-                  rules={[{ required: true, message: 'Please enter User name' }]}
-                >
-                  <Input  />
-                </Form.Item>
-              </Col>
-              
-            </Row> */}
+           
 
 <Row gutter={16}>
 <Col span={10}>

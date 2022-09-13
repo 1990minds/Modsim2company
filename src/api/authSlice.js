@@ -90,7 +90,6 @@ export default authenticateSlice.reducer
 
 export const logOut = () => async dispatch =>{
     // const key = 'logOut';
-
     try {
                
         localStorage.removeItem('token');
@@ -110,14 +109,9 @@ export const fetchlogin = (logindata) => async dispatch =>{
     dispatch(getlogin())
     message.loading({ content: 'Loading...', key })
 
-    try {
-        
-     
+    try {    
         const {data} = await axios.post(keyUri.BACKEND_URI + '/companyAuth', logindata, config)
-       
-
         dispatch(getAuthenticate(data))
-
         localStorage.setItem('token', data.token )
         // data &&  message.success({ content: data.msg, key, duration: 2 });
 
@@ -129,27 +123,24 @@ export const fetchlogin = (logindata) => async dispatch =>{
 }
 
 
-export const fetchUserProfile = (token) => async dispatch =>{
 
+export const fetchUserProfile = (token) => async dispatch =>{
   const loginConfig  = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   }
-
   dispatch(getlogin())
-
   try {
     const {data} = await axios.get(keyUri.BACKEND_URI + '/companyProfile',  loginConfig)
     dispatch(getUserProfile(data))
-
   } catch (error) {
           error && message.error('Authentication Failure');
           dispatch(logOut())
-
-
   }
 }
+
+
 
 
 export const fethFilter = (value, filter) => async dispatch =>{
@@ -157,26 +148,23 @@ export const fethFilter = (value, filter) => async dispatch =>{
 console.log(value);
 if(!value ){
  return dispatch(getFilter(a))
-
 }
-
   try {
       const {data} = await axios.get(keyUri.BACKEND_URI + `/${value}?search=${filter}`, config)
       dispatch(getFilter(data))
-
-
   } catch (error) {
 
       dispatch(isAuthenticateError())
   }
 
 }
+
+
+
+
 export const checkAuth = () => async dispatch =>{
-
   console.log('test');
-
   const token = localStorage.getItem('token')
-
   const loginConfig  = {
     headers: {
       Authorization: `Bearer ${token}`,

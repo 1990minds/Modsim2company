@@ -34,17 +34,13 @@ console.log(user)
     const [debouncedText] = useDebounce(search, 2000);
     
 
-    console.log(all_broadcast);
+  
 
   
 
   useEffect(()=>{
 
     axios.get(keyUri.BACKEND_URI +`/broadcast?search=${debouncedText}`).then(({data})=>{
-      console.log(
-        'text'
-      );
-      console.log({data})
 
       setFilter(data?.filterbroadcast)
        })

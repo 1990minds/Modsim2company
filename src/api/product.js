@@ -56,11 +56,11 @@ export const productSelector = state => state.product;
 
 export const fetchAllproduct = () => async dispatch => {
   dispatch(getproduct())
- console.log('get');
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/product`)
-   console.log(data);
+  
    
    dispatch(getAll_product_success(data));
     
@@ -97,7 +97,7 @@ export const fetchAllproduct = () => async dispatch => {
 
 
  export const createProduct = ( values,id) => async dispatch => {
-console.log( "values");
+
 
   dispatch(getproduct())
   const key = 'create';
@@ -124,11 +124,11 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
  export const fetchOneproduct = (id) => async dispatch => {
 
   dispatch(getproduct())
- console.log(id);
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/product/${id}`)
-  console.log(data);
+
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -144,14 +144,13 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/product/${id}`, values, config);
-    console.log(data);
+  
     
     data && message.success({ content: data.msg, key, duration: 2 });
     // dispatch(fetchAllproduct())
     window.location.reload()
 
 } catch ({response}) {
-console.log(response.data);
     dispatch(get_product_Failure())
    
 

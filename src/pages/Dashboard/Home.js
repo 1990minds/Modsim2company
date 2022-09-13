@@ -271,73 +271,28 @@ console.log()
       Title: "Lorem Ipsum",
       bud: "$14,000",
       progress: <Progress percent={60} size="small" />,
-      // member: (
-      //   <div className="avatar-group mt-2">
-      //     <Tooltip placement="bottom" title="Ryan Tompson">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Romina Hadid">
-      //       <img className="tootip-img" src={team2} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Alexander Smith">
-      //       <img className="tootip-img" src={team3} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Jessica Doe">
-      //       <img className="tootip-img" src={team4} alt="" />
-      //     </Tooltip>
-      //   </div>
-      // ),
+   
     },
     {
       // img: ava2,
       Title: "Lorem Ipsum",
       bud: "$3,000",
       progress: <Progress percent={10} size="small" />,
-      // member: (
-      //   <div className="avatar-group mt-2">
-      //     <Tooltip placement="bottom" title="Ryan Tompson">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Romina Hadid">
-      //       <img className="tootip-img" src={team2} alt="" />
-      //     </Tooltip>
-      //   </div>
-      // ),
+    
     },
     {
       // img: ava3,
       Title: "Lorem Ipsum",
       bud: "Not Set",
       progress: <Progress percent={100} size="small" status="active" />,
-      // member: (
-      //   <div className="avatar-group mt-2">
-      //     <Tooltip placement="bottom" title="Ryan Tompson">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Romina Hadid">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Alexander Smith">
-      //       <img className="tootip-img" src={team3} alt="" />
-      //     </Tooltip>
-      //   </div>
-      // ),
+   
     },
     {
       // img: ava4,
       Title: "Lorem Ipsum",
       bud: "$20,600",
       progress: <Progress percent={100} size="small" status="active" />,
-      // member: (
-      //   <div className="avatar-group mt-2">
-      //     <Tooltip placement="bottom" title="Ryan Tompson">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Romina Hadid">
-      //       <img className="tootip-img" src={team2} alt="" />
-      //     </Tooltip>
-      //   </div>
-      // ),
+     
     },
     {
       // img: ava5,
@@ -359,48 +314,11 @@ console.log()
        format={() => "Cancel"}
        />
       ),
-      // member: (
-      //   <div className="avatar-group mt-2">
-      //     <Tooltip placement="bottom" title="Ryan Tompson">
-      //       <img className="tootip-img" src={team1} alt="" />
-      //     </Tooltip>
-      //     <Tooltip placement="bottom" title="Romina Hadid">
-      //       <img className="tootip-img" src={team2} alt="" />
-      //     </Tooltip>
-      //   </div>
-      // ),
+   
     },
   ];
 
-  const timelineList = [
-    {
-      title: "$2,400 - Redesign store",
-      time: "09 JUN 7:20 PM",
-      color: "green",
-    },
-    {
-      title: "New order #3654323",
-      time: "08 JUN 12:20 PM",
-      color: "green",
-    },
-    {
-      title: "Company server payments",
-      time: "04 JUN 3:10 PM",
-    },
-    {
-      title: "New card added for order #4826321",
-      time: "02 JUN 2:45 PM",
-    },
-    {
-      title: "Unlock folders for development",
-      time: "18 MAY 1:30 PM",
-    },
-    {
-      title: "New order #46282344",
-      time: "14 MAY 3:30 PM",
-      color: "gray",
-    },
-  ];
+  
 
   const uploadProps = {
     name: "file",

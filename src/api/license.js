@@ -74,7 +74,6 @@ export const fetchAllcompanyLicense = (id) => async dispatch => {
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-license/${id}`)
-   console.log(data);
    
    dispatch(getAllcompanyLicense(data));
     
@@ -88,13 +87,12 @@ export const fetchAllcompanyLicense = (id) => async dispatch => {
 
  export const fetchAllcompanyactiveLicense = (id) => async dispatch => {
   dispatch(getlicense())
-console.log({id})
+
 
 
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-license-active/${id}`)
-   console.log(data);
    
    dispatch(getAllcompanyactiveLicense(data));
     
@@ -109,11 +107,10 @@ console.log({id})
  export const fetchOnelicense = (id) => async dispatch => {
 
   dispatch(getlicense())
- console.log(id);
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/license/${id}`)
-  console.log(data);
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 

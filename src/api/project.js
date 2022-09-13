@@ -60,7 +60,6 @@ export const fetchAllproject = (id) => async dispatch => {
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/project`)
-   console.log(data);
    
    dispatch(getAll_project_success(data));
     
@@ -79,7 +78,7 @@ export const fetchAllcompanyProject = (id) => async dispatch => {
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-project/${id}`)
-   console.log(data);
+  
    
    dispatch(getAll_project_success(data));
     
@@ -141,11 +140,9 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
  export const fetchOneproject = (id) => async dispatch => {
 
   dispatch(getproject())
- console.log(id);
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/project/${id}`)
-  console.log(data);
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -161,13 +158,12 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/project/${id}`, values, config);
-    console.log(data);
+ 
     
     data && message.success({ content: data.msg, key, duration: 2 });
     dispatch(fetchAllproject(company))
 
 } catch ({response}) {
-console.log(response.data);
     dispatch(get_project_Failure())
    
 

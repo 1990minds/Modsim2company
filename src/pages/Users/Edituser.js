@@ -1,16 +1,10 @@
 import React,  {useEffect, useState} from 'react'
-import styled from 'styled-components'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
-
-import { Form, Input, Divider, Button, Col, Row, Select, Drawer,  DatePicker, Upload, InputNumber, Switch  } from 'antd';
+import { Form, Input, Button, Col, Row, Select,  } from 'antd';
 import {updateUser, fetchOneUser, userSelector} from '../../api/user'
-import { UploadOutlined } from '@ant-design/icons';
 import {authenticateSelector} from '../../api/authSlice'
-import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
-import { fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
-import moment from 'moment';
-import {FaUserAlt, FaLock} from 'react-icons/fa'
+
 
 const { Option } = Select;
 const layout = {
@@ -29,9 +23,7 @@ export default function EditUser({cancel, current_user,}) {
     const [validityYear, setYear]=useState(null)
     const [validityMonth, setMonth]=useState(null)
     
-    // const {current_user} = useSelector(userSelector)
-    console.log(current_user);
-    // console.log(current_user.license.license_number);
+  
  
     
     
@@ -202,20 +194,6 @@ console.log(validityYear);
               </Col>
               
            
-
-            {/* <Row gutter={16}>
-              <Col span={20}>
-                <Form.Item
-                  type="user_name"
-                  name="user_name"
-                  label="User name"
-                  rules={[{ required: true, message: 'Please enter User name' }]}
-                >
-                  <Input  />
-                </Form.Item>
-              </Col>
-              
-            </Row> */}
 
 
 <Col span={12}>

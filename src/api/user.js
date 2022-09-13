@@ -56,13 +56,13 @@ export const userSelector = state => state.user;
 export const fetchAllCompanyUser = (id,company) => async dispatch => {
   dispatch(getuser())
  
-  console.log({id});
+ 
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/company-user/${id}`)
 
 
-   console.log(data);
+  
    
    dispatch(getAll_user_success(data));
     
@@ -115,11 +115,11 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
  export const fetchOneUser = (id) => async dispatch => {
 
   dispatch(getuser())
- console.log(id);
+
   try {
  
    const {data} = await axios.get(keyUri.BACKEND_URI +`/user/${id}`)
-  console.log(data);
+ 
    dispatch(getCurrentSuccess(data));
   } catch (error) {
 
@@ -135,7 +135,7 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/user/${id}`, values, config);
-    console.log(data);
+   
     
     data && message.success({ content: data.msg, key, duration: 2 });
     dispatch(fetchAllCompanyUser(company));

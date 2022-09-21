@@ -24,7 +24,6 @@ export default function User() {
   const { all_user,loading:load} = useSelector(userSelector) 
   const { user } = useSelector(authenticateSelector) 
   
-  // const { user } = useSelector(authenticateSelector) 
 
   
  

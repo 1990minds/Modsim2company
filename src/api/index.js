@@ -8,6 +8,7 @@ import broadcastReducer from './broadcast';
 import customersReducer from './customers';
 import projectReducer from './project';
 import panelReducer from './panel';
+import logReducer from './log'
 
 
 
@@ -23,5 +24,6 @@ export default configureStore({
      customers:customersReducer,
      project:projectReducer,
      panel:panelReducer,
+     log:logReducer,
   },
 });

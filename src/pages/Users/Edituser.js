@@ -162,11 +162,11 @@ console.log(validityYear);
                   type="phone_number"
                   name="phone_number"
                   label="Phone Number"
-                  rules={[{ required: true ,message: 'required!' },
-                  {min: 10},
-                  {max:10},
-                  {pattern:"[0-9]", message:"Only Numbers"}
-                  ]}
+                  // rules={[{ required: true ,message: 'required!' },
+                  // {min: 10},
+                  // {max:10},
+                  // {pattern:"[0-9]", message:"Only Numbers"}
+                  // ]}
                 >
                   <Input  />
                 </Form.Item>

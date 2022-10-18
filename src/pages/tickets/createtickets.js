@@ -11,17 +11,10 @@ import {MdClose, MdDelete} from 'react-icons/md'
 import {createtickets} from '../../api/tickets'
 import {authenticateSelector} from '../../api/authSlice';
 
-import { fetchAlltickets, ticketsSelector} from '../../api/tickets';
-import { fetchAllCompany } from '../../api/company';
 
 
 const { TextArea } = Input;
-const { Option } = Select;
 
-const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 12 },
-  };
   
   
 export default function Createtickets({cancel}) {
@@ -34,7 +27,6 @@ export default function Createtickets({cancel}) {
     setVisible(false);
   };
 
-  const [loading, setLoading] = useState(false)
   const { user } = useSelector(authenticateSelector) 
   
 console.log(user);
@@ -44,16 +36,10 @@ console.log(user);
   const [imgurl, setImgurl] = useState([])
   const [loading1, setLoading1] = useState(false)
   const [fileList, setFileList] = useState([])
-    const [validityYear, setYear]=useState(null)
-    const [validityMonth, setMonth]=useState(null)
-      
+
     const {id} = useParams()
 
-    useEffect(()=>{
 
-      dispatch(fetchAllCompany(user?._id))
-      
- }, [dispatch])
    
 
         

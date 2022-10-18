@@ -27,7 +27,6 @@ export default function User() {
 
   
  
- 
   const [search, setSearch] = useState('')
   const [ loading, setLoading] = useState(false)
   const [filter,setFilter]=useState([])

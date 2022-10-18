@@ -54,51 +54,24 @@ export const companySelector = state => state.company;
 
 
 
-export const fetchAllCompany = () => async dispatch => {
-  dispatch(getcompany())
+// export const fetchAllCompany = () => async dispatch => {
+//   dispatch(getcompany())
  
-  try {
+//   try {
  
-   const {data} = await axios.get(keyUri.BACKEND_URI +`/company`)
+//    const {data} = await axios.get(keyUri.BACKEND_URI +`/company`)
    
-   
-   dispatch(getAll_company_success(data));
+//    dispatch(getAll_company_success(data));
     
-  } catch (error) {
+//   } catch (error) {
  
- dispatch(get_company_Failure())
+//  dispatch(get_company_Failure())
 
-  }
- };
-
-
-
-  
-
- export const deleteCompany = (id, company) => async dispatch => {
-
-  dispatch(getcompany())
-  const key = 'create';
-  message.loading({ content: 'loading...', key })
-  try {
- 
-   const {data} = await axios.delete(keyUri.BACKEND_URI +`/company/${id} `, company, config)
-  data && message.success({ content: data.msg, key, duration: 2 });
-   dispatch(fetchAllCompany());
-    
-  } catch (error) {
-
-
- dispatch(get_company_Failure())
- 
-  }
- };
+//   }
+//  };
 
 
 
-
-
- 
 
 
  export const fetchOneCompany = (id) => async dispatch => {

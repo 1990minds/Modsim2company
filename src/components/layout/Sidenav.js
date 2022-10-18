@@ -422,6 +422,19 @@ c-0.01-0.42-0.32-0.5-0.66-0.51C49.71,15.18,49.14,15.19,48.56,15.19z"fill={color}
     </svg>,
   ];
 
+  const help = [
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      key={0}
+    >
+      <path  d="M8.414.968a1.102 1.102 0 1 0 0 2.204h2.204a1.102 1.102 0 1 0 0-2.204H8.414Z"fill={color}></path>
+   <path  fill-rule="evenodd" d="M2.903 4.274A2.204 2.204 0 0 1 5.108 2.07a3.306 3.306 0 0 0 3.306 3.306h2.204a3.307 3.307 0 0 0 3.307-3.306 2.204 2.204 0 0 1 2.204 2.204v12.124a2.204 2.204 0 0 1-2.204 2.204H5.108a2.204 2.204 0 0 1-2.205-2.204V4.274ZM6.21 8.683a1.102 1.102 0 0 0 0 2.204h.01a1.102 1.102 0 0 0 0-2.204h-.01Zm3.306 0a1.102 1.102 0 0 0 0 2.204h3.307a1.102 1.102 0 0 0 0-2.204H9.516ZM6.21 13.092a1.102 1.102 0 1 0 0 2.204h.01a1.102 1.102 0 0 0 0-2.204h-.01Zm3.306 0a1.102 1.102 0 1 0 0 2.204h3.307a1.102 1.102 0 0 0 0-2.204H9.516Z" clip-rule="evenodd"fill={color}></path>
+</svg>
+  ];
+
   const signup = [
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -520,6 +533,20 @@ c-0.01-0.42-0.32-0.5-0.66-0.51C49.71,15.18,49.14,15.19,48.56,15.19z"fill={color}
           </NavLink>
         </Menu.Item>
 
+
+        <Menu.Item key="9">
+          <NavLink to="/auth/help-center">
+            <span
+              className="icon"
+              style={{
+                background: page === "help-center" ? color : "",
+              }}
+            >
+              {help}
+            </span>
+            <span className="label">Help Center</span>
+          </NavLink>
+        </Menu.Item>
 
        
       </Menu>

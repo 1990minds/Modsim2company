@@ -13,6 +13,7 @@ import {
   import Edituser from './Edituser';
   import {useDispatch} from 'react-redux'
   import {deleteUser} from '../../api/user'
+  import Loader from '../shared/tableloader'
 
   
   function UserTable({data, loading}) {
@@ -174,7 +175,7 @@ import {
                 <div className="table-responsive">
                   <Table
                   scroll={{ x: true }}
-                  loading={loading} 
+                  loading={{spinning: loading, indicator: <Loader/>}} 
                   pagination={{
                       onChange(current) {
                       setPage(current)

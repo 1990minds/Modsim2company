@@ -10,6 +10,7 @@ import {
   import {useDispatch} from 'react-redux'
   import styled from 'styled-components'
   import moment from "moment";
+  import Loader from '../shared/tableloader'
 
   
   function Tables({data, loading}) {
@@ -135,7 +136,7 @@ import {
               >
                 <div className="table-responsive">
                   <Table
-                  loading={loading}
+                  loading={{spinning: loading, indicator: <Loader/>}} 
                     columns={columns}
                     dataSource={data}
                     pagination={{

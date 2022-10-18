@@ -29,3 +29,50 @@
     gap: 10%;
 }
 
+
+
+
+.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+    background: #ffffff !important;
+    margin-top: 10px;
+    font-size: 1rem !important;
+    box-shadow: 6px 6px 3px #F1F1F1;
+  }
+  
+  .ant-collapse-ghost
+    > .ant-collapse-item
+    > .ant-collapse-content
+    > .ant-collapse-content-box {
+    background: #f3f3f3 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 0.8rem !important;
+    box-shadow: 6px 6px 3px #F1F1F1;
+    height: 65vh;
+    overflow-y: auto;
+  }
+  
+  .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-arrow
+    svg {
+    transition: 1s;
+    font-size: 0.8rem !important;
+    /* color: var(--brandColor) !important; */
+  }
+
+  .helpImg{
+    /* display: flex;
+   justify-content: space-between;
+   height:550px;
+   margin: 20px 0; */
+   display: grid;
+   grid-template-columns: 30% 70%;
+   gap: 10px;
+   margin: 20px 0;
+   /* height:550px */
+  }
+
+  .helpImg p{
+    text-align: justify;
+}

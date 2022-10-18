@@ -29,7 +29,7 @@ import {fetchAllpanel,panelSelector} from '../../api/panel'
 import {useEffect,  useLayoutEffect} from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import {authenticateSelector} from '../../api/authSlice'
-import {userSelector} from '../../api/user'
+import {userSelector, fetchAllCompanyUser} from '../../api/user'
 
 
 
@@ -68,7 +68,7 @@ console.log()
 
     dispatch(fetchAllcompanycustomers(user?._id))
     dispatch(fetchAllcompanyProject(user?._id)) 
-    // dispatch(fetchAllUserTickets(user?._id)) 
+    dispatch(fetchAllCompanyUser(user?._id)) 
     dispatch(fetchAllpanel(user?._id)) 
  }, [user])
 

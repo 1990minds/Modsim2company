@@ -11,34 +11,38 @@ import Img22 from '../../assets/images/helpCenter/PRASAD2.png';
 const data = [
     {
         id:1,
-        title:"How to create User",
+        title:"How to create User ?",
         content:  <div >
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                   <p className='helpDesc'><b>Step 1 : </b>Click on Create option in the Users tab.</p>
                   <div className='helpImg'>
-                        <p>Lorem ipsum dolcommodo  adipisicing elit, sed do eiusmod consequat adipisicing elit, sed do eiusmod consequat.</p>
                         <img src={Img11}  preview={false}  />
+                        <p></p>
                   </div>
+                  <p className='helpDesc'><b>Step 2 : </b>Fill necessary details in the fields, Generate Username and Password for the user and submit.</p>
                   <div className='helpImg'>
-                        <p>Lorem ipsum dolcommodo  adipisicing elit, sed do eiusmod consequat adipisicing elit, sed do eiusmod consequat.</p>
                         <img src={Img12}  preview={false} />
-                  </div> 
+                        <p></p>
+                  </div>
+                  <p className='helpDesc'><b>Step 3 : </b>Share the details personally through convenient & safe communication channel to your user.</p> 
                   <div className='helpImg'>
-                        <p>Lorem ipsum dolcommodo  adipisicing elit, sed do eiusmod consequat adipisicing elit, sed do eiusmod consequat.</p>
                         <img src={Img13}  preview={false} /></div>
+                        <p></p>
                   </div>
      },
     {
         id:2,
-         title:"How to raise Ticket",
+         title:"How to raise a Ticket ?",
          content:  <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p className='helpDesc'><b>Step 1 : </b>Click on the Ticket tab on the side menu -> Click on raise ticket and fill necessary details. </p> 
                 <div className='helpImg'>
-                    <p>Lorem ipsum dolcommodo  adipisicing elit, sed do eiusmod consequat adipisicing elit, sed do eiusmod consequat.</p>
                     <img src={Img21}  preview={false}  />
+                    <p></p>
                 </div>
+                <p className='helpDesc'><b>Step 2 : </b>Ticket ID will be generated and shown in a Table. Admin will address the Ticket and respond to you by Mail.</p> 
+
                 <div className='helpImg'>
-                    <p>Lorem ipsum dolcommodo  adipisicing elit, sed do eiusmod consequat adipisicing elit, sed do eiusmod consequat.</p>
                     <img src={Img22}  preview={false} />
+                    <p></p>
                 </div> 
 
 

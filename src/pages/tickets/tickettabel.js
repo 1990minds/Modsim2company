@@ -137,6 +137,7 @@ import {
                 <div className="table-responsive">
                   <Table
                   loading={{spinning: loading, indicator: <Loader/>}} 
+                  scroll={{ x  : 1500, y:500, }}
                     columns={columns}
                     dataSource={data}
                     pagination={{

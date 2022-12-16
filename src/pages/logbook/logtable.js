@@ -89,6 +89,8 @@ export default function LogTable({data, intialdata, loading}) {
         //   ...rowSelection,
         // }}  
         loading={{spinning: loading, indicator: <Loader/>}} 
+        scroll={{ x  : 1500, y:500, }}
+
         pagination={{
           onChange(current) {
             setPage(current)

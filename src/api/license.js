@@ -24,8 +24,11 @@ export const licenseSlice = createSlice({
 
     getAll_license_success: (state, {payload})  =>{
 
+
+      console.log(payload)
         state.loading = false
         state.all_license = payload.license
+
 
     },
 

@@ -31,6 +31,9 @@ console.log(payload);
 
 
     getCurrentSuccess: (state, {payload}) =>{
+
+      console.log(payload)
+
         state.loading = false
         state.current_user = payload.user
     
@@ -136,6 +139,7 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/user/${id}`, values, config);
    
+    console.log(data)
     
     data && message.success({ content: data.msg, key, duration: 2 });
     dispatch(fetchAllCompanyUser(company));

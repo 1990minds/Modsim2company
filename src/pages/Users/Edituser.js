@@ -54,6 +54,8 @@ export default function EditUser({cancel, current_user,}) {
 
     const onFinish = (values) => {
 
+      console.log(values)
+
       console.log(values.license_number)
   
         const userdata = {
@@ -73,6 +75,7 @@ export default function EditUser({cancel, current_user,}) {
         
       console.log(userdata)
    dispatch(updateUser(current_user?._id, userdata,user?._id))
+   window.location.reload()
    cancel()
   
   };

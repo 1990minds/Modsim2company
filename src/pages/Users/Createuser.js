@@ -7,7 +7,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import {createuser} from '../../api/user'
 import {authenticateSelector} from '../../api/authSlice';
 
-import { fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
+import { fetchAllcompanyLicense,fetchAllcompanyactiveLicense, licenseSelector} from '../../api/license';
 
 const { Option } = Select;
 
@@ -20,10 +20,9 @@ const layout = {
 export default function Createuser({cancel}) {
   
     const [loading, setLoading] = useState(false)
-    const { user } = useSelector(authenticateSelector) 
-    
+    const { user } = useSelector(authenticateSelector)    
+    const {all_license} = useSelector(licenseSelector) 
     const {all_active_license} = useSelector(licenseSelector) 
-
 
  
 
@@ -31,10 +30,14 @@ export default function Createuser({cancel}) {
       
       
       useEffect(()=>{
-console.log("sdfgdsgsghsfh")
-           dispatch(fetchAllcompanyactiveLicense(user?._id))
+      dispatch(fetchAllcompanyLicense(user?._id))
            
       }, [user])
+
+      useEffect(()=>{
+        dispatch(fetchAllcompanyactiveLicense(user?._id))
+             
+        }, [user])
         
   
   const onFinish = (values) => {
@@ -95,46 +98,46 @@ const onClose = () => {
     return (
       <>
       <Tooltip placement="top" title="Create new user">
-        <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />} style={{fontSize: "14px"}}>
-          Create
-        </Button>
-        </Tooltip>
-        <Drawer
-          title="Create a New User" placement="right" onClose={onClose} visible={visible} width={720}
-        >
-          <DataWrap>
-          <Form layout="vertical" hideRequiredMark
-           form={form}
-           name="basic"
-           initialValues={{ remember: false }}
-           onFinish={onFinish}
-           onFinishFailed={onFinishFailed}
-           autoComplete={false}
-          >
-            <Row gutter={16}>
-              <Col span={12}>
-                <Form.Item
-                autoComplete="flase"
-                  name="license_number"
-                  label="License Number"
-                  rules={[{ required: true, message: 'Please enter License Number' }]}
-                >
- <Select 
-                           showSearch
-                           placeholder="License Number"  
-                           optionFilterProp="children"
-                           filterOption={(input, option) =>
-                             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                          }
+      <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />} style={{fontSize: "14px"}}>
+      Create
+      </Button>
+      </Tooltip>
+      <Drawer
+      title="Create a New User" placement="right" onClose={onClose} visible={visible} width={720}
+      >
+      <DataWrap>
+      <Form layout="vertical" hideRequiredMark
+       form={form}
+       name="basic"
+       initialValues={{ remember: false }}
+       onFinish={onFinish}
+       onFinishFailed={onFinishFailed}
+       autoComplete={false}
+       >
+       <Row gutter={16}>
+       <Col span={12}>
+       <Form.Item
+       autoComplete="flase"
+       name="license_number"
+       label="License Number"
+       rules={[{ required: true, message: 'Please enter License Number' }]}
+       >
+       <Select 
+        showSearch
+        placeholder="License Number"  
+        optionFilterProp="children"
+        filterOption={(input, option) =>
+        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
                           
-                           onChange={handleChangeSelect}>
-                    {
-                        all_active_license.map((item, i)=>{     
+        onChange={handleChangeSelect}>
+        {
+         all_license.map((item, i)=>{     
                                                 
-                        return <option key={i} value={item._id} >{item.license_number}</option>
+         return <option key={i} value={item._id} disabled={item.user ? true:false} >{item.license_number} {}</option>
 
-                    })
-                    }
+        })
+        }
                             
                     </Select>
  

@@ -310,7 +310,7 @@ function Header({
             <Badge size="small">
             {/* <FaUserCog style={{height:'1.5rem',  cursor: 'pointer' }}/> */}
             <Avatar style={{ color: '#fff', backgroundColor: '#1890FF', boxShadow: "0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.20)" }}>
-            {user?.company_name.charAt(0).toUpperCase()}
+            {user?.company_name?.charAt(0).toUpperCase()}
             </Avatar>
             </Badge>
             </Link>

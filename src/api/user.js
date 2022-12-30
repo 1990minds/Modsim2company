@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios'
 import { message } from 'antd';
 import { keyUri, config } from '../key'
-import {fetchAllcompanyactiveLicense} from './license'
+import {fetchAllcompanyactiveLicense,fetchAllcompanyLicense} from './license'
 
 const initialState = {
 
@@ -105,7 +105,7 @@ export const createuser = ( values,company) => async dispatch => {
    const {data} = await axios.post(keyUri.BACKEND_URI +`/user`, values, config)
    data && message.success({ content: data.msg, key, duration: 2 });
    dispatch(fetchAllCompanyUser(company));
-   dispatch(fetchAllcompanyactiveLicense(company))
+   dispatch(fetchAllcompanyLicense(company))
 
   } 
   catch ({response}) {
@@ -138,10 +138,11 @@ response.data && message.error({ content: response.data.msg, key, duration: 2 })
 
 try {
     const {data} = await axios.put(keyUri.BACKEND_URI +`/user/${id}`, values, config);
-   
+    
     console.log(data)
     
     data && message.success({ content: data.msg, key, duration: 2 });
+    dispatch(fetchAllcompanyLicense(company))
     dispatch(fetchAllCompanyUser(company));
 
 } catch ({response}) {

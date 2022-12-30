@@ -154,7 +154,8 @@ const handleChangeSelect = (value) =>{
                 <Col span={12}>
                 <Form.Item
                  name="full_name"
-                 label="User name"
+
+                 label="Name"            
                  rules={[{ required: true, message: 'Please enter User name' }]}
                  >
                  <Input />
@@ -246,4 +247,3 @@ Update
       </>
     );
   }
-

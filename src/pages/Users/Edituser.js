@@ -45,21 +45,14 @@ export default function EditUser({cancel, current_user,}) {
         phone_number:current_user && current_user.phone_number,
         full_name:current_user && current_user.full_name,
         company:user?._id,
-        
-    
+           
         });
-        
-
      }, [current_user])
 
+
+
     const onFinish = (values) => {
-
-      console.log(values)
-
-      console.log(values.license_number)
-  
         const userdata = {
-
 
              license_number:values.license_number,
              phone_number:values.phone_number,
@@ -73,10 +66,8 @@ export default function EditUser({cancel, current_user,}) {
              
           }
         
-      console.log(userdata)
-   dispatch(updateUser(current_user?._id, userdata,user?._id))
-   window.location.reload()
-   cancel()
+            dispatch(updateUser(current_user?._id, userdata,user?._id))
+            cancel()
   
   };
 
@@ -248,9 +239,9 @@ const handleChangeSelect = (value) =>{
 <Button type="primary" htmlType="submit"
 onClick={() => setVisible(false)}
 block style={{ fontSize: '14px' }}>
-      Update
-    </Button>
-          </Form>
+Update
+</Button>
+</Form>
         
       </>
     );
